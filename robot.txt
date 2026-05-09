@@ -1,0 +1,39 @@
+# robots.txt — hanslacida.com
+# Hans Lacida · Paid Acquisition Systems Operator
+
+User-agent: *
+Allow: /
+
+# Block admin, private, and system paths
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/
+Disallow: /cdn-cgi/
+
+# Block low-value or duplicate URL patterns
+Disallow: /*?utm_*
+Disallow: /*?ref=*
+Disallow: /*?fbclid=*
+Disallow: /*?gclid=*
+Disallow: /*?source=*
+Disallow: /*?preview=*
+Disallow: /?s=*
+
+# Allow key public sections explicitly
+Allow: /results/
+Allow: /playbook/
+Allow: /insights/
+Allow: /faq/
+Allow: /about/
+Allow: /how-i-operate/
+Allow: /brands/
+Allow: /testimonials/
+
+# Sitemap
+Sitemap: https://hanslacida.com/sitemap.xml
+
+# Crawl rate hint (optional — Googlebot ignores this, but others respect it)
+Crawl-delay: 1
