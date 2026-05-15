@@ -764,6 +764,735 @@
   </div>
 </section>
 
+<!-- ─── PAIN POINTS SECTION ─── -->
+<!-- Drop this block anywhere in hanslacida.com — after #testimonial or before #results -->
+<!-- All CSS variables inherit from the existing :root. Zero conflicts. -->
+
+<style>
+  /* ─── PAIN POINTS SECTION STYLES ─── */
+  .pain-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+  }
+
+  /* ICP Toggle Nav */
+  .pain-icp-nav {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--border);
+    background: var(--bg-3);
+    width: fit-content;
+    margin-bottom: 64px;
+    overflow: hidden;
+  }
+  .pain-icp-btn {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--border);
+    padding: 12px 22px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  .pain-icp-btn:last-child { border-right: none; }
+  .pain-icp-btn:hover { color: var(--text-secondary); background: var(--surface); }
+  .pain-icp-btn.active {
+    color: var(--accent);
+    background: var(--accent-dim);
+    border-color: var(--border);
+  }
+
+  /* Main layout */
+  .pain-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  /* Left sidebar — persona card */
+  .pain-persona-card {
+    background: var(--bg-3);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    position: sticky;
+    top: 84px;
+    transition: opacity 0.4s ease;
+  }
+  .pain-persona-card::before {
+    content: '';
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), transparent);
+    margin: -32px -28px 28px;
+  }
+  .pain-persona-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .pain-persona-name {
+    font-family: var(--serif);
+    font-size: 24px;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .pain-persona-name em { font-style: italic; color: var(--accent); }
+  .pain-persona-desc {
+    font-family: var(--sans);
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pain-persona-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pain-profile-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .pain-profile-k {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+  .pain-profile-v {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text-secondary);
+    text-align: right;
+    line-height: 1.4;
+  }
+  .pain-persona-quote {
+    margin-top: 24px;
+    padding: 16px;
+    background: rgba(200,169,110,0.06);
+    border-left: 2px solid var(--accent);
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* Right side — pain point cards */
+  .pain-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .pain-point-card {
+    background: var(--bg-2);
+    padding: 0;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .pain-point-card:hover { background: var(--bg-3); }
+  .pain-point-card::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 0;
+    background: var(--accent);
+    transition: width 0.35s ease;
+  }
+  .pain-point-card:hover::before { width: 2px; }
+
+  .pain-point-inner {
+    display: grid;
+    grid-template-columns: 56px 1fr auto;
+    align-items: start;
+    gap: 0;
+    padding: 28px 32px;
+  }
+
+  .pain-point-num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    opacity: 0.5;
+    padding-top: 3px;
+    flex-shrink: 0;
+  }
+
+  .pain-point-body { flex: 1; }
+
+  .pain-point-title {
+    font-family: var(--serif);
+    font-size: 21px;
+    color: var(--text-primary);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .pain-point-detail {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 14px;
+    max-width: 520px;
+  }
+  .pain-point-detail strong { color: var(--text-primary); font-weight: 600; }
+
+  .pain-point-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .pain-tag {
+    font-family: var(--mono);
+    font-size: 9.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border: 1px solid var(--border-light);
+    padding: 4px 10px;
+    background: var(--bg-3);
+  }
+  .pain-tag.hot {
+    color: var(--red);
+    border-color: rgba(201,91,91,0.3);
+    background: rgba(201,91,91,0.06);
+  }
+  .pain-tag.money {
+    color: var(--accent);
+    border-color: rgba(200,169,110,0.3);
+    background: var(--accent-dim);
+  }
+
+  .pain-point-cost {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--red);
+    padding-top: 4px;
+    white-space: nowrap;
+    opacity: 0.8;
+    padding-left: 24px;
+    flex-shrink: 0;
+  }
+
+  /* CTA at bottom of section */
+  .pain-cta-strip {
+    margin-top: 48px;
+    border: 1px solid var(--border-light);
+    background: var(--bg-3);
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .pain-cta-strip-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .pain-cta-strip-label {
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .pain-cta-strip-text {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--text-primary);
+    line-height: 1.2;
+  }
+  .pain-cta-strip-text em { font-style: italic; color: var(--accent); }
+
+  /* Panel visibility */
+  .pain-panel { display: none; }
+  .pain-panel.active { display: block; }
+
+  @media (max-width: 900px) {
+    .pain-section { padding: 72px 24px; }
+    .pain-layout { grid-template-columns: 1fr; gap: 32px; }
+    .pain-persona-card { position: static; }
+    .pain-icp-nav { flex-wrap: wrap; width: 100%; }
+    .pain-icp-btn { flex: 1; text-align: center; border-right: none; border-bottom: 1px solid var(--border); }
+    .pain-icp-btn:last-child { border-bottom: none; }
+    .pain-point-inner { grid-template-columns: 40px 1fr; }
+    .pain-point-cost { display: none; }
+    .pain-cta-strip { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+
+<!-- ─── SECTION WRAPPER ─── -->
+<hr class="divider">
+<div style="background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+<section class="pain-section" id="pain-points">
+
+  <!-- Section eyebrow -->
+  <div class="section-eyebrow">
+    <div class="section-eyebrow-line"></div>
+    <span>Who I Work With</span>
+  </div>
+  <h2 class="section-title reveal" style="margin-bottom: 12px;">
+    You know the spend is there.<br>
+    <em>The return isn't.</em>
+  </h2>
+  <p class="section-sub reveal" style="margin-bottom: 48px;">
+    Every type of business I work with has a different context — but the core problem is always the same: money going in, signal coming out broken, and Google's AI making decisions on garbage data.
+  </p>
+
+  <!-- ICP toggle nav -->
+  <div class="pain-icp-nav reveal">
+    <button class="pain-icp-btn active" onclick="switchICP('ecommerce', this)">Ecommerce Brand</button>
+    <button class="pain-icp-btn" onclick="switchICP('local', this)">Multi-Location Local</button>
+    <button class="pain-icp-btn" onclick="switchICP('agency', this)">Agency Owner</button>
+  </div>
+
+  <!-- ─── ECOMMERCE PANEL ─── -->
+  <div class="pain-panel active" id="icp-ecommerce">
+    <div class="pain-layout">
+
+      <div class="pain-persona-card reveal">
+        <div class="pain-persona-label">ICP Profile</div>
+        <div class="pain-persona-name">The Ecommerce<br><em>Brand Owner</em></div>
+        <div class="pain-persona-desc">
+          You're doing $30K–$500K/month in revenue and running Google Ads — but your ROAS report and your bank account tell two very different stories.
+        </div>
+        <div class="pain-persona-profile">
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Spend</span>
+            <span class="pain-profile-v">$5K–$80K/mo</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Platform</span>
+            <span class="pain-profile-v">Google Ads + Shopify / WooComm</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Primary pain</span>
+            <span class="pain-profile-v">Broken tracking, PMax waste</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Goal</span>
+            <span class="pain-profile-v">Profitable scale without guessing</span>
+          </div>
+        </div>
+        <div class="pain-persona-quote">
+          "My agency says ROAS is 6×. My profit margin says otherwise. I don't even know what's real anymore."
+        </div>
+      </div>
+
+      <div class="pain-points-list reveal">
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">01 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Your ROAS looks good. Your margins don't.</div>
+              <div class="pain-point-detail">Google is optimizing for <strong>reported revenue</strong>, not profit. Returns, discounts, shipping costs, and LTV aren't in the signal — so you're scaling campaigns that are actively destroying margin while the dashboard says 5× ROAS.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Margin killer</span>
+                <span class="pain-tag">Conversion signal</span>
+                <span class="pain-tag">Profit bidding</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Silent drain</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">02 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Performance Max is spending — but you have no idea where.</div>
+              <div class="pain-point-detail">PMax shows you one blended number across Search, Shopping, Display, YouTube, and Gmail. <strong>You can't tell which channel is performing and which is burning budget</strong> on low-intent placements. Google designed it that way.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">PMax black box</span>
+                <span class="pain-tag">Asset group structure</span>
+                <span class="pain-tag money">Most fixable</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">$2K–$15K/mo lost</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">03 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Tracking is broken and everyone says it's fine.</div>
+              <div class="pain-point-detail">Your agency set up GA4 and Google Tag Manager three years ago and hasn't touched it since. <strong>Enhanced conversions aren't enabled. Server-side isn't configured. iOS14 killed half your signal</strong> and nobody told you — or fixed it.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Data loss</span>
+                <span class="pain-tag">GA4 + GTM</span>
+                <span class="pain-tag">Enhanced conversions</span>
+                <span class="pain-tag">Server-side</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">30–60% signal lost</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">04 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You're paying to retarget people who already bought.</div>
+              <div class="pain-point-detail">Without proper Customer Match exclusions and audience segmentation, <strong>your ads are chasing recent purchasers, current customers, and email subscribers</strong> — people who were going to buy anyway. You're paying for credit you don't need to take.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Wasted spend</span>
+                <span class="pain-tag">Customer Match</span>
+                <span class="pain-tag">Audience segmentation</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Invisible waste</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">05 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Scaling breaks the account every time.</div>
+              <div class="pain-point-detail">You double the budget and ROAS collapses. You pull back and it recovers. <strong>The account doesn't have a stable structure</strong> — it's patched campaigns, mismatched bidding strategies, and competing ad groups that are cannibalizing each other.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Scaling ceiling</span>
+                <span class="pain-tag">Campaign architecture</span>
+                <span class="pain-tag money">Fixable in 30 days</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Growth blocked</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">06 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Your feed is the reason Shopping underperforms.</div>
+              <div class="pain-point-detail">Titles that say "Blue T-Shirt — Medium" instead of what buyers actually search. Missing GTINs. No supplemental feed. <strong>Google is matching your products to irrelevant queries</strong> because you gave it garbage to work with — and PMax made it worse.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Feed quality</span>
+                <span class="pain-tag">Shopping architecture</span>
+                <span class="pain-tag">Merchant Center</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Low-intent traffic</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── LOCAL MULTI-LOCATION PANEL ─── -->
+  <div class="pain-panel" id="icp-local">
+    <div class="pain-layout">
+
+      <div class="pain-persona-card reveal">
+        <div class="pain-persona-label">ICP Profile</div>
+        <div class="pain-persona-name">The Multi-Location<br><em>Business Owner</em></div>
+        <div class="pain-persona-desc">
+          You operate 2–20+ locations across a region or nationally. Each location has its own market, its own competitive set, and you're trying to run Google Ads for all of them.
+        </div>
+        <div class="pain-persona-profile">
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Verticals</span>
+            <span class="pain-profile-v">HVAC, medspa, dental, home services</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Spend</span>
+            <span class="pain-profile-v">$3K–$30K/mo per location</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Primary pain</span>
+            <span class="pain-profile-v">Cost per lead, lead quality</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Goal</span>
+            <span class="pain-profile-v">Qualified leads at a predictable CPL</span>
+          </div>
+        </div>
+        <div class="pain-persona-quote">
+          "I'm getting leads — but my sales team says half of them aren't serious. I don't know if it's the ads or the market."
+        </div>
+      </div>
+
+      <div class="pain-points-list reveal">
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">01 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You're paying for leads. You're not paying for qualified leads.</div>
+              <div class="pain-point-detail">The campaign optimizes for form fills and calls. <strong>It doesn't know which ones turned into booked appointments, closed sales, or repeat customers</strong> — because that data lives in your CRM, not in Google Ads. So the algorithm chases volume, not value.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Lead quality</span>
+                <span class="pain-tag">Offline conversion import</span>
+                <span class="pain-tag money">High-value fix</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Budget on bad leads</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">02 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Every location is competing against itself.</div>
+              <div class="pain-point-detail">When your Scottsdale and Phoenix campaigns run under the same account structure, <strong>they bid against each other in overlapping geo targets</strong> — inflating your own costs. Location consolidation without proper geo architecture is money thrown at an auction you're running against yourself.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Self-competition</span>
+                <span class="pain-tag">Geo targeting</span>
+                <span class="pain-tag">Campaign structure</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">CPL inflated 20–40%</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">03 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Call tracking is broken or non-existent.</div>
+              <div class="pain-point-detail">If your conversion is a phone call, <strong>you need to know which keyword, which ad, which geo drove that call — and whether it was answered</strong>. Most setups count the ring. Not the answer. Not the booking. Google is optimizing for phone rings from people who hung up.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Call tracking</span>
+                <span class="pain-tag">Conversion quality</span>
+                <span class="pain-tag">Healthcare compliance</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Phantom conversions</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">04 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Your negative keyword list hasn't been touched in months.</div>
+              <div class="pain-point-detail"><strong>Broad match and PMax are serving to "near me" searches in markets where you don't operate.</strong> DIY queries. Competitor brand searches. Adjacent services you don't offer. Every irrelevant click is a dollar that didn't go toward a real prospect.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Wasted reach</span>
+                <span class="pain-tag">Negative keywords</span>
+                <span class="pain-tag">Search term hygiene</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">$1K–$8K/mo leaked</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">05 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Seasonality hits you every year like it's new information.</div>
+              <div class="pain-point-detail">HVAC in August. Medspa in December. Your busiest seasons are also when <strong>CPCs peak and competitors flood the auction</strong>. Without a seasonal bidding strategy and budget phasing built ahead of time, you're reactive — and you always overpay at the worst moment.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Seasonal planning</span>
+                <span class="pain-tag">Budget strategy</span>
+                <span class="pain-tag">Auction dynamics</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Reactive = expensive</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">06 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You have no single view of what's actually working across locations.</div>
+              <div class="pain-point-detail">One location is crushing CPL. Two others are hemorrhaging budget. You don't have a <strong>unified reporting view that breaks down performance by location, by keyword intent, by lead stage</strong> — so decisions happen on gut, not data.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Reporting gap</span>
+                <span class="pain-tag">Looker Studio</span>
+                <span class="pain-tag money">Quick win</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Flying blind</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── AGENCY PANEL ─── -->
+  <div class="pain-panel" id="icp-agency">
+    <div class="pain-layout">
+
+      <div class="pain-persona-card reveal">
+        <div class="pain-persona-label">ICP Profile</div>
+        <div class="pain-persona-name">The Agency<br><em>Owner</em></div>
+        <div class="pain-persona-desc">
+          You run a digital agency managing Google Ads for 5–30 clients. Execution is the bottleneck. You need someone who operates at expert level without needing management.
+        </div>
+        <div class="pain-persona-profile">
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Model</span>
+            <span class="pain-profile-v">White-label / overflow / specialist</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Spend managed</span>
+            <span class="pain-profile-v">$50K–$500K/mo across clients</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Primary pain</span>
+            <span class="pain-profile-v">Capacity, depth, client retention</span>
+          </div>
+          <div class="pain-profile-row">
+            <span class="pain-profile-k">Goal</span>
+            <span class="pain-profile-v">Expert execution, no hand-holding</span>
+          </div>
+        </div>
+        <div class="pain-persona-quote">
+          "My best PPC person just quit. I need someone who can walk into an account and run it — not someone I have to train."
+        </div>
+      </div>
+
+      <div class="pain-points-list reveal">
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">01 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Your senior PPC talent is your biggest single point of failure.</div>
+              <div class="pain-point-detail">One key person leaves and suddenly <strong>6 clients are at risk of churn</strong>. Institutional account knowledge walks out the door. You spend the next 60 days hiring, onboarding, and hoping the new person doesn't make expensive mistakes in live accounts.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Retention risk</span>
+                <span class="pain-tag">Capacity</span>
+                <span class="pain-tag money">High urgency</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Client churn risk</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">02 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">PMax launched and your team doesn't actually understand it.</div>
+              <div class="pain-point-detail">Your team runs PMax because clients ask for it — but <strong>nobody on your team can explain asset group architecture, placement exclusions, or why a PMax campaign is cannibalizing your standard Shopping</strong>. When results drop, nobody knows why or what to do.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">PMax knowledge gap</span>
+                <span class="pain-tag">Training cost</span>
+                <span class="pain-tag">Client trust</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Silent account decay</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">03 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You're losing clients to "in-house" and you can't compete on depth.</div>
+              <div class="pain-point-detail">A client's $200K/mo spend justifies hiring a dedicated media buyer. <strong>The pitch that wins those clients back isn't cheaper — it's deeper</strong>: server-side tracking, offline conversion import, first-party data strategy. Skills most agencies don't have and can't hire for.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Churn trigger</span>
+                <span class="pain-tag">Competitive positioning</span>
+                <span class="pain-tag money">Retention lever</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Revenue at risk</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">04 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">Conversion tracking is a mess across the portfolio and nobody owns it.</div>
+              <div class="pain-point-detail">Half your client accounts have duplicate conversions. A third have GA4 misconfigured. Two clients have <strong>no server-side setup despite running six-figure monthly budgets</strong>. Tracking debt compounds — and every bad decision your team makes is built on a broken foundation.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Tracking debt</span>
+                <span class="pain-tag">GA4 + GTM audit</span>
+                <span class="pain-tag">Portfolio-wide</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Compounding errors</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">05 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You're pitching clients on results but delivering on effort.</div>
+              <div class="pain-point-detail">Your reports show activity — keywords added, bids adjusted, ads tested. <strong>What they don't show is outcome</strong>: revenue per ad dollar, CPA trend, contribution margin improvement. Clients who ask hard questions stay. Clients who get soft answers churn quietly.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Reporting quality</span>
+                <span class="pain-tag">Client retention</span>
+                <span class="pain-tag">Attribution</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Quiet churn</span>
+          </div>
+        </div>
+
+        <div class="pain-point-card">
+          <div class="pain-point-inner">
+            <span class="pain-point-num">06 /</span>
+            <div class="pain-point-body">
+              <div class="pain-point-title">You can't take on new clients because execution is already maxed.</div>
+              <div class="pain-point-detail">The pipeline is there. The proposals are going out. But <strong>every time you close a new account you're adding hours to an already-overloaded team</strong>. You're leaving revenue on the table not because of sales — because of capacity. Growth is blocked by execution bandwidth.</div>
+              <div class="pain-point-tags">
+                <span class="pain-tag hot">Growth ceiling</span>
+                <span class="pain-tag">White-label execution</span>
+                <span class="pain-tag money">Leverage available</span>
+              </div>
+            </div>
+            <span class="pain-point-cost">Revenue left behind</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA strip -->
+  <div class="pain-cta-strip reveal">
+    <div class="pain-cta-strip-left">
+      <span class="pain-cta-strip-label">What happens next</span>
+      <div class="pain-cta-strip-text">If three of these hit — <em>it's fixable.</em></div>
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="https://book.hanslacida.com" class="btn-primary">Book 15-Min Fit Call →</a>
+      <a href="/results/" class="btn-ghost">See the fixes in action</a>
+    </div>
+  </div>
+
+</section>
+</div>
+
+
+  
 <!-- ─── RESULTS ─── -->
 <hr class="divider">
 <section id="results">
@@ -1066,6 +1795,22 @@
   mobileNavClose.addEventListener('click', closeMobileNav);
   mobileNavOverlay.addEventListener('click', closeMobileNav);
   mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
+</script>
+  <!-- ─── ICP SWITCHER SCRIPT ─── -->
+<script>
+  function switchICP(id, btn) {
+    document.querySelectorAll('.pain-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.pain-icp-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('icp-' + id).classList.add('active');
+    btn.classList.add('active');
+
+    // Re-trigger reveal animations on newly visible cards
+    const panel = document.getElementById('icp-' + id);
+    panel.querySelectorAll('.reveal').forEach(el => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), 60);
+    });
+  }
 </script>
 </body>
 </html>
