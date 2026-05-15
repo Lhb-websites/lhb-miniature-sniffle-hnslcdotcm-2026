@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ─── SEO META ─── -->
+  <title>Google Ads Paid Acquisition Systems: The Complete Operator Guide — Hans Lacida</title>
+  <meta name="description" content="The definitive guide to building a Google Ads paid acquisition system that compounds. Covers Performance Max architecture, conversion tracking infrastructure, first-party data strategy, and campaign structure that actually scales. Written by a 10-year Google Ads operator with $550M+ in attributed client revenue.">
+  <meta name="author" content="Hans Lacida">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://hanslacida.com/google-ads-paid-acquisition-systems/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Google Ads Paid Acquisition Systems: The Complete Operator Guide">
+  <meta property="og:description" content="Build a Google Ads system that compounds — not just campaigns that run. Performance Max, server-side tracking, first-party data, and conversion infrastructure by Hans Lacida.">
+  <meta property="og:url" content="https://hanslacida.com/google-ads-paid-acquisition-systems/">
+  <meta property="og:site_name" content="Hans Lacida">
+  <meta property="og:image" content="https://hanslacida.com/images/og-pillar-google-ads.jpg">
+  <meta property="article:author" content="Hans Lacida">
+  <meta property="article:published_time" content="2026-05-01T00:00:00+00:00">
+  <meta property="article:modified_time" content="2026-05-16T00:00:00+00:00">
+  <meta property="article:section" content="Google Ads">
+  <meta property="article:tag" content="Google Ads">
+  <meta property="article:tag" content="Performance Max">
+  <meta property="article:tag" content="Conversion Tracking">
+  <meta property="article:tag" content="Paid Acquisition">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Google Ads Paid Acquisition Systems: The Complete Operator Guide">
+  <meta name="twitter:description" content="The definitive guide to building Google Ads infrastructure that compounds. By Hans Lacida, Paid Acquisition Systems Operator.">
+  <meta name="twitter:site" content="@HansLacida">
+  <meta name="twitter:creator" content="@HansLacida">
+
+  <!-- ─── STRUCTURED DATA / SCHEMA ─── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://hanslacida.com/google-ads-paid-acquisition-systems/#article",
+        "headline": "Google Ads Paid Acquisition Systems: The Complete Operator Guide",
+        "description": "The definitive guide to building a Google Ads paid acquisition system that compounds. Covers Performance Max architecture, conversion tracking infrastructure, first-party data strategy, and campaign structure that actually scales.",
+        "url": "https://hanslacida.com/google-ads-paid-acquisition-systems/",
+        "datePublished": "2026-05-01T00:00:00+00:00",
+        "dateModified": "2026-05-16T00:00:00+00:00",
+        "author": {
+          "@type": "Person",
+          "@id": "https://hanslacida.com/#person",
+          "name": "Hans Lacida",
+          "alternateName": "Hans \"Dexter\" Lacida",
+          "url": "https://hanslacida.com",
+          "jobTitle": "Paid Acquisition Systems Operator",
+          "description": "10+ year Google Ads operator with $550M+ in attributed client revenue. Former Google Ads Account Strategist.",
+          "knowsAbout": ["Google Ads", "Performance Max", "Conversion Tracking", "First-Party Data", "Paid Acquisition", "eCommerce Marketing"],
+          "sameAs": [
+            "https://x.com/HansLacida",
+            "https://www.linkedin.com/in/hanslacida/",
+            "https://www.instagram.com/hanslacida/"
+          ]
+        },
+        "publisher": {
+          "@type": "Person",
+          "@id": "https://hanslacida.com/#person",
+          "name": "Hans Lacida"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://hanslacida.com/google-ads-paid-acquisition-systems/"
+        },
+        "keywords": ["Google Ads", "Performance Max", "Paid Acquisition", "Conversion Tracking", "Server-Side Tracking", "First-Party Data", "eCommerce Google Ads", "PMax Architecture", "Google Ads Audit"],
+        "articleSection": ["Google Ads Strategy", "Performance Max", "Conversion Tracking", "First-Party Data", "Campaign Architecture"],
+        "wordCount": "6500",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hanslacida.com" },
+          { "@type": "ListItem", "position": 2, "name": "Playbook", "item": "https://hanslacida.com/playbook/" },
+          { "@type": "ListItem", "position": 3, "name": "Google Ads Paid Acquisition Systems", "item": "https://hanslacida.com/google-ads-paid-acquisition-systems/" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a Google Ads paid acquisition system?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A paid acquisition system is the infrastructure layer beneath campaigns — the conversion tracking, audience signals, campaign architecture, bidding strategy, and first-party data pipeline that determines whether Google's AI makes good decisions on your budget. Campaigns stop when the budget stops. Systems compound."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Performance Max underperform for most advertisers?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Performance Max underperforms because it requires high-quality conversion signals to make intelligent bidding decisions. Without server-side tracking, enhanced conversions, and correct asset group architecture, PMax optimizes toward low-quality traffic and wastes 40–60% of budget on placements that never convert."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much ad spend is typically wasted due to broken tracking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In most accounts with client-side-only tracking and no enhanced conversions, 30–60% of actual conversions go unrecorded post-iOS14. This means Google's bidding AI is working from an incomplete signal — optimizing toward whatever it can measure, which is often not what actually drives revenue."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between enhanced conversions and server-side tracking?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Enhanced conversions are a Google-native feature that hashes first-party data (email, phone) from conversion events to improve match rates in cookieless environments. Server-side tracking moves the tracking tag from the browser to a secure server, preventing ad blockers and browser privacy restrictions from killing the signal. Both work together — enhanced conversions on top of server-side tracking is the current gold standard."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I know if my Google Ads account needs a structural rebuild?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Signs you need a structural rebuild: ROAS fluctuates wildly when you change budgets, campaigns are competing against each other in the same auction, you have more than 3-4 bidding strategies running simultaneously, your PMax and Standard Shopping are overlapping, or your conversion tracking shows duplicate or inflated conversion counts."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts — same as homepage -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-2: #111111;
+      --bg-3: #161616;
+      --surface: #1a1a1a;
+      --border: #242424;
+      --border-light: #2e2e2e;
+      --text-primary: #f0ede8;
+      --text-secondary: #9a9690;
+      --text-muted: #5a5754;
+      --accent: #c8a96e;
+      --accent-dim: rgba(200, 169, 110, 0.12);
+      --accent-bright: #e2c48a;
+      --red: #c95b5b;
+      --green: #6ba88a;
+      --mono: 'JetBrains Mono', monospace;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Syne', sans-serif;
+      --content-width: 720px;
+      --sidebar-width: 260px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.35;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      padding: 0 40px; height: 64px;
+      display: flex; align-items: center; justify-content: space-between;
+      background: rgba(10,10,10,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-family: var(--serif); font-size: 18px; color: var(--text-primary); text-decoration: none; }
+    .nav-logo span { color: var(--accent); }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a { font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text-primary); }
+    .nav-cta { font-family: var(--mono) !important; font-size: 11px !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; color: var(--accent) !important; border: 1px solid var(--accent) !important; padding: 8px 16px !important; text-decoration: none !important; transition: background 0.2s, color 0.2s !important; }
+    .nav-cta:hover { background: var(--accent) !important; color: var(--bg) !important; }
+
+    /* ─── BREADCRUMB ─── */
+    .breadcrumb {
+      max-width: 1200px; margin: 80px auto 0; padding: 20px 40px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .breadcrumb a, .breadcrumb span {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); text-decoration: none;
+    }
+    .breadcrumb a:hover { color: var(--accent); }
+    .breadcrumb .sep { color: var(--border-light); }
+    .breadcrumb .current { color: var(--text-secondary); }
+
+    /* ─── HERO ─── */
+    .pillar-hero {
+      max-width: 1200px; margin: 0 auto;
+      padding: 40px 40px 64px;
+      border-bottom: 1px solid var(--border);
+    }
+    .pillar-hero-inner { max-width: 860px; }
+    .pillar-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .pillar-eyebrow-line { width: 32px; height: 1px; background: var(--accent); }
+    .pillar-eyebrow span { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .pillar-h1 { font-family: var(--serif); font-size: clamp(36px, 5vw, 64px); line-height: 1.06; color: var(--text-primary); margin-bottom: 16px; letter-spacing: -0.01em; }
+    .pillar-h1 em { font-style: italic; color: var(--accent); }
+    .pillar-hero-meta { display: flex; align-items: center; gap: 24px; margin-bottom: 28px; flex-wrap: wrap; }
+    .pillar-meta-item { font-family: var(--mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+    .pillar-meta-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--border-light); }
+    .pillar-hero-lead { font-family: var(--sans); font-size: 18px; line-height: 1.75; color: var(--text-secondary); max-width: 680px; margin-bottom: 32px; }
+    .pillar-hero-lead strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Stats strip */
+    .pillar-stats { display: flex; gap: 0; border: 1px solid var(--border); background: var(--bg-3); width: fit-content; margin-bottom: 32px; }
+    .pillar-stat { padding: 16px 24px; border-right: 1px solid var(--border); }
+    .pillar-stat:last-child { border-right: none; }
+    .pillar-stat-n { font-family: var(--serif); font-size: 26px; color: var(--accent); line-height: 1; margin-bottom: 4px; }
+    .pillar-stat-l { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); line-height: 1.4; }
+
+    /* ─── LAYOUT ─── */
+    .pillar-layout {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--sidebar-width) 1fr;
+      gap: 0;
+      align-items: start;
+      padding: 0 40px;
+    }
+
+    /* ─── SIDEBAR TOC ─── */
+    .pillar-sidebar {
+      position: sticky; top: 84px;
+      padding: 40px 0 40px 0;
+      padding-right: 40px;
+      border-right: 1px solid var(--border);
+    }
+    .toc-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px; }
+    .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .toc-item a {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em;
+      color: var(--text-muted); text-decoration: none; padding: 8px 0;
+      border-left: 2px solid transparent;
+      padding-left: 12px; margin-left: -12px;
+      transition: color 0.2s, border-color 0.2s;
+      line-height: 1.45;
+    }
+    .toc-item a:hover, .toc-item a.active { color: var(--accent); border-left-color: var(--accent); }
+    .toc-num { flex-shrink: 0; opacity: 0.5; font-size: 9.5px; margin-top: 1px; }
+    .toc-divider { height: 1px; background: var(--border); margin: 12px 0; }
+    .toc-cta { margin-top: 24px; }
+    .toc-cta a {
+      display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--bg); background: var(--accent); border: 1px solid var(--accent);
+      padding: 11px 16px; text-decoration: none; text-align: center;
+      transition: background 0.2s;
+    }
+    .toc-cta a:hover { background: var(--accent-bright); }
+    .toc-progress { margin-bottom: 20px; }
+    .toc-progress-bar { height: 1px; background: var(--border); position: relative; margin-bottom: 8px; }
+    .toc-progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s; }
+    .toc-progress-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* ─── CONTENT ─── */
+    .pillar-content {
+      padding: 56px 0 80px 56px;
+      max-width: 740px;
+    }
+
+    /* Chapter headings */
+    .chapter {
+      margin-bottom: 80px;
+      padding-bottom: 80px;
+      border-bottom: 1px solid var(--border);
+    }
+    .chapter:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .chapter-eyebrow {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    }
+    .chapter-num {
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); opacity: 0.7;
+    }
+    .chapter-tag {
+      font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted); border: 1px solid var(--border-light); padding: 3px 10px;
+      background: var(--bg-3);
+    }
+
+    .chapter-h2 {
+      font-family: var(--serif); font-size: clamp(28px, 3.5vw, 40px); color: var(--text-primary);
+      line-height: 1.1; margin-bottom: 12px;
+    }
+    .chapter-h2 em { font-style: italic; color: var(--accent); }
+
+    .chapter-lead {
+      font-family: var(--sans); font-size: 16px; line-height: 1.75; color: var(--text-secondary);
+      margin-bottom: 36px; border-left: 2px solid var(--accent); padding-left: 20px;
+    }
+
+    h3.section-h3 {
+      font-family: var(--serif); font-size: 22px; color: var(--text-primary);
+      line-height: 1.2; margin: 40px 0 14px;
+    }
+
+    p.body-p {
+      font-family: var(--sans); font-size: 15.5px; line-height: 1.8;
+      color: var(--text-secondary); margin-bottom: 20px;
+    }
+    p.body-p strong { color: var(--text-primary); font-weight: 600; }
+    p.body-p em { font-style: italic; color: var(--accent); }
+
+    /* Callout boxes */
+    .callout {
+      border: 1px solid var(--border-light); background: var(--bg-3);
+      padding: 24px 28px; margin: 32px 0; position: relative;
+    }
+    .callout::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); }
+    .callout-label { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .callout-text { font-family: var(--sans); font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
+    .callout-text strong { color: var(--text-primary); font-weight: 600; }
+
+    .callout.warn { border-color: rgba(201,91,91,0.3); }
+    .callout.warn::before { background: linear-gradient(90deg, var(--red), transparent); }
+    .callout.warn .callout-label { color: var(--red); }
+    .callout.good { border-color: rgba(107,168,138,0.3); }
+    .callout.good::before { background: linear-gradient(90deg, var(--green), transparent); }
+    .callout.good .callout-label { color: var(--green); }
+
+    /* Ordered/Unordered lists */
+    .content-list { list-style: none; margin: 20px 0 28px; display: flex; flex-direction: column; gap: 10px; }
+    .content-list li { font-family: var(--sans); font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 12px; }
+    .content-list li::before { content: '→'; color: var(--accent); font-family: var(--mono); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+    .content-list li strong { color: var(--text-primary); font-weight: 600; }
+
+    .ordered-list { list-style: none; margin: 20px 0 28px; display: flex; flex-direction: column; gap: 12px; counter-reset: olist; }
+    .ordered-list li { font-family: var(--sans); font-size: 15px; color: var(--text-secondary); line-height: 1.65; display: flex; align-items: flex-start; gap: 16px; counter-increment: olist; }
+    .ordered-list li::before { content: counter(olist, decimal-leading-zero); font-family: var(--mono); font-size: 11px; color: var(--accent); flex-shrink: 0; margin-top: 2px; letter-spacing: 0.06em; opacity: 0.7; }
+    .ordered-list li strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border: 1px solid var(--border); border-collapse: collapse; margin: 28px 0; }
+    .compare-table th { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); padding: 14px 18px; border-bottom: 1px solid var(--border); background: var(--bg-3); text-align: left; }
+    .compare-table td { font-family: var(--sans); font-size: 13.5px; color: var(--text-secondary); padding: 14px 18px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.5; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:hover td { background: var(--bg-3); }
+    .td-check { color: var(--green); font-family: var(--mono); font-size: 12px; }
+    .td-x { color: var(--red); font-family: var(--mono); font-size: 12px; }
+    .td-warn { color: var(--accent); font-family: var(--mono); font-size: 12px; }
+
+    /* Stat callout inline */
+    .inline-stat { display: inline-flex; align-items: baseline; gap: 6px; }
+    .inline-stat-num { font-family: var(--serif); font-size: 32px; color: var(--accent); line-height: 1; }
+    .inline-stat-label { font-family: var(--mono); font-size: 11px; color: var(--text-muted); letter-spacing: 0.08em; }
+
+    /* Result cards inside content */
+    .content-results { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); margin: 28px 0; }
+    .content-result { background: var(--bg-2); padding: 24px; }
+    .content-result-num { font-family: var(--serif); font-size: 32px; color: var(--accent); line-height: 1; margin-bottom: 6px; }
+    .content-result-desc { font-family: var(--sans); font-size: 13px; color: var(--text-secondary); line-height: 1.55; margin-bottom: 8px; }
+    .content-result-tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* Step process */
+    .process-steps { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); margin: 28px 0; }
+    .process-step { display: grid; grid-template-columns: 56px 1fr; gap: 0; border-bottom: 1px solid var(--border); }
+    .process-step:last-child { border-bottom: none; }
+    .step-num-col { display: flex; align-items: flex-start; justify-content: center; padding: 24px 0; border-right: 1px solid var(--border); background: var(--bg-3); }
+    .step-num { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; color: var(--accent); opacity: 0.7; }
+    .step-body { padding: 24px 28px; background: var(--bg-2); }
+    .step-title { font-family: var(--serif); font-size: 18px; color: var(--text-primary); margin-bottom: 8px; }
+    .step-desc { font-family: var(--sans); font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
+    .step-desc strong { color: var(--text-primary); font-weight: 600; }
+
+    /* Related links cluster */
+    .cluster-links { border: 1px solid var(--border); background: var(--bg-3); margin: 32px 0; }
+    .cluster-links-head { font-family: var(--mono); font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); padding: 14px 20px; border-bottom: 1px solid var(--border); }
+    .cluster-link-item { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; border-bottom: 1px solid var(--border); transition: background 0.2s; }
+    .cluster-link-item:last-child { border-bottom: none; }
+    .cluster-link-item:hover { background: var(--surface); }
+    .cluster-link-item a { font-family: var(--sans); font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+    .cluster-link-item a:hover { color: var(--accent); }
+    .cluster-link-type { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* Blockquote */
+    blockquote.pull-quote {
+      border-left: 2px solid var(--accent); padding: 4px 0 4px 24px;
+      margin: 32px 0;
+    }
+    blockquote.pull-quote p { font-family: var(--serif); font-size: 20px; font-style: italic; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+    blockquote.pull-quote cite { display: block; margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); }
+
+    /* FAQ section */
+    .faq-list { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); margin: 28px 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-q {
+      font-family: var(--serif); font-size: 17px; color: var(--text-primary);
+      padding: 20px 24px; cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+      user-select: none; transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--bg-3); }
+    .faq-q-arrow { font-family: var(--mono); font-size: 14px; color: var(--accent); transition: transform 0.3s; flex-shrink: 0; margin-left: 16px; }
+    .faq-a {
+      font-family: var(--sans); font-size: 14.5px; color: var(--text-secondary); line-height: 1.75;
+      padding: 0 24px 0; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 24px 20px; }
+    .faq-item.open .faq-q-arrow { transform: rotate(180deg); }
+    .faq-a strong { color: var(--text-primary); font-weight: 600; }
+
+    /* In-content CTA */
+    .content-cta-block {
+      border: 1px solid rgba(200,169,110,0.3); background: var(--accent-dim);
+      padding: 28px 32px; margin: 40px 0;
+      display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    }
+    .content-cta-block-text { display: flex; flex-direction: column; gap: 4px; }
+    .content-cta-block-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .content-cta-block-heading { font-family: var(--serif); font-size: 20px; color: var(--text-primary); line-height: 1.2; }
+
+    /* Buttons */
+    .btn-primary { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg); background: var(--accent); border: 1px solid var(--accent); padding: 12px 22px; text-decoration: none; font-weight: 500; transition: background 0.2s; display: inline-block; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-bright); }
+    .btn-ghost { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-secondary); background: transparent; border: 1px solid var(--border-light); padding: 12px 22px; text-decoration: none; transition: border-color 0.2s, color 0.2s; display: inline-block; }
+    .btn-ghost:hover { border-color: var(--text-secondary); color: var(--text-primary); }
+
+    /* Divider */
+    .section-rule { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+    /* Author box */
+    .author-box { border: 1px solid var(--border); background: var(--bg-3); padding: 32px; margin-top: 64px; display: flex; gap: 28px; align-items: flex-start; }
+    .author-box-left { flex-shrink: 0; }
+    .author-initial { width: 56px; height: 56px; background: var(--accent-dim); border: 1px solid rgba(200,169,110,0.3); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 24px; color: var(--accent); }
+    .author-box-name { font-family: var(--serif); font-size: 20px; color: var(--text-primary); margin-bottom: 4px; }
+    .author-box-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 12px; }
+    .author-box-bio { font-family: var(--sans); font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+    .author-box-creds { display: flex; flex-direction: column; gap: 6px; }
+    .author-cred { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+    .author-cred::before { content: '▸'; color: var(--accent); font-size: 8px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1000px) {
+      .pillar-layout { grid-template-columns: 1fr; padding: 0 24px; }
+      .pillar-sidebar { display: none; }
+      .pillar-content { padding: 40px 0; max-width: 100%; }
+      .pillar-hero { padding: 24px 24px 48px; }
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .content-results { grid-template-columns: 1fr; }
+      .breadcrumb { padding: 20px 24px; }
+      .pillar-stats { flex-wrap: wrap; }
+      .author-box { flex-direction: column; gap: 20px; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
+  <ul class="nav-links">
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/playbook/">Playbook</a></li>
+    <li><a href="/insights/">Insights</a></li>
+    <li><a href="/faq/">FAQ</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <li><a href="https://book.hanslacida.com" class="nav-cta">Book Fit Call</a></li>
+  </ul>
+</nav>
+
+<!-- ─── BREADCRUMB ─── -->
+<div class="breadcrumb">
+  <a href="/">Home</a>
+  <span class="sep">›</span>
+  <a href="/playbook/">Playbook</a>
+  <span class="sep">›</span>
+  <span class="current">Google Ads Paid Acquisition Systems</span>
+</div>
+
+<!-- ─── PILLAR HERO ─── -->
+<div class="pillar-hero">
+  <div class="pillar-hero-inner">
+    <div class="pillar-eyebrow">
+      <div class="pillar-eyebrow-line"></div>
+      <span>Pillar Guide · Paid Acquisition</span>
+    </div>
+
+    <h1 class="pillar-h1">
+      Google Ads Paid<br>
+      <em>Acquisition Systems</em>
+    </h1>
+
+    <div class="pillar-hero-meta">
+      <span class="pillar-meta-item">By Hans Lacida</span>
+      <span class="pillar-meta-dot"></span>
+      <span class="pillar-meta-item">Updated May 2026</span>
+      <span class="pillar-meta-dot"></span>
+      <span class="pillar-meta-item">~25 min read</span>
+      <span class="pillar-meta-dot"></span>
+      <span class="pillar-meta-item">6,500+ words</span>
+    </div>
+
+    <p class="pillar-hero-lead">
+      Most Google Ads accounts are running campaigns. <strong>Very few are running systems.</strong> The difference is structural: a system has clean conversion signal, a campaign architecture that compounds with AI bidding, first-party data feeding every decision, and Performance Max set up to work for you instead of around you. This guide covers all of it — from the infrastructure foundations to the vertical-specific execution playbooks that produced 70× ROAS and $550M+ in attributed revenue.
+    </p>
+
+    <div class="pillar-stats">
+      <div class="pillar-stat"><div class="pillar-stat-n">70×</div><div class="pillar-stat-l">Peak ROAS<br>achieved</div></div>
+      <div class="pillar-stat"><div class="pillar-stat-n">$550M+</div><div class="pillar-stat-l">Revenue<br>attributed</div></div>
+      <div class="pillar-stat"><div class="pillar-stat-n">10+</div><div class="pillar-stat-l">Years<br>operating</div></div>
+      <div class="pillar-stat"><div class="pillar-stat-n">−53%</div><div class="pillar-stat-l">CPA reduction<br>(healthcare)</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TWO-COLUMN LAYOUT ─── -->
+<div class="pillar-layout">
+
+  <!-- SIDEBAR TOC -->
+  <aside class="pillar-sidebar">
+    <div class="toc-progress">
+      <div class="toc-progress-bar"><div class="toc-progress-fill" id="progressFill"></div></div>
+      <span class="toc-progress-label" id="progressLabel">0% read</span>
+    </div>
+    <div class="toc-label">Contents</div>
+    <ul class="toc-list">
+      <li class="toc-item"><a href="#ch1" data-chapter="ch1"><span class="toc-num">01</span> What a Paid Acquisition System Actually Is</a></li>
+      <li class="toc-item"><a href="#ch2" data-chapter="ch2"><span class="toc-num">02</span> Conversion Tracking Infrastructure</a></li>
+      <li class="toc-item"><a href="#ch3" data-chapter="ch3"><span class="toc-num">03</span> Performance Max Architecture</a></li>
+      <li class="toc-item"><a href="#ch4" data-chapter="ch4"><span class="toc-num">04</span> First-Party Data Strategy</a></li>
+      <li class="toc-item"><a href="#ch5" data-chapter="ch5"><span class="toc-num">05</span> Campaign Structure That Scales</a></li>
+      <li class="toc-item"><a href="#ch6" data-chapter="ch6"><span class="toc-num">06</span> Vertical Playbooks</a></li>
+      <li class="toc-item"><a href="#ch7" data-chapter="ch7"><span class="toc-num">07</span> Bidding Strategy & Budget Frameworks</a></li>
+      <li class="toc-item"><a href="#ch8" data-chapter="ch8"><span class="toc-num">08</span> Reporting & Measurement Systems</a></li>
+      <li class="toc-item"><a href="#ch9" data-chapter="ch9"><span class="toc-num">09</span> Common Failure Modes & Fixes</a></li>
+      <li class="toc-item"><a href="#ch10" data-chapter="ch10"><span class="toc-num">10</span> FAQs</a></li>
+    </ul>
+    <div class="toc-divider"></div>
+    <div class="toc-cta">
+      <a href="https://book.hanslacida.com">Book a Fit Call →</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="pillar-content" id="pillarContent">
+
+    <!-- ─── CHAPTER 1 ─── -->
+    <article class="chapter reveal" id="ch1">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">01 /</span>
+        <span class="chapter-tag">Foundation</span>
+      </div>
+      <h2 class="chapter-h2">What a Paid Acquisition <em>System</em> Actually Is</h2>
+      <p class="chapter-lead">Campaigns stop when the budget stops. A system keeps delivering because the infrastructure — signal quality, audience data, campaign architecture — compounds over time.</p>
+
+      <p class="body-p">Every Google Ads account has campaigns. Most have settings, bids, and keywords. Very few have a <strong>system</strong> — and that distinction is the entire reason two accounts with identical budgets can produce wildly different returns.</p>
+
+      <p class="body-p">A paid acquisition system is the layer beneath campaigns. It's the conversion tracking that tells Google's AI what actually matters. It's the campaign structure that prevents self-competition and budget cannibalisation. It's the audience signals that shift bidding toward high-value customers instead of just high-intent queries. It's the first-party data pipeline that gives your account a compounding advantage as third-party cookies disappear.</p>
+
+      <h3 class="section-h3">The three layers of a functioning system</h3>
+
+      <p class="body-p">Most practitioners think about Google Ads in one dimension: campaign settings. A systems operator thinks in three layers simultaneously.</p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">L1</span></div>
+          <div class="step-body">
+            <div class="step-title">Signal Layer</div>
+            <div class="step-desc">Conversion tracking infrastructure — what you're telling Google's AI to optimize toward. This includes conversion action configuration, enhanced conversions, server-side tagging, offline conversion import (OCI), and GA4 event quality. <strong>Everything else sits on top of this. If the foundation is broken, the rest of the account is guessing.</strong></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">L2</span></div>
+          <div class="step-body">
+            <div class="step-title">Structural Layer</div>
+            <div class="step-desc">Campaign architecture, audience segmentation, asset group construction, negative keyword frameworks, and bidding strategy configuration. This is the skeleton that determines whether the system is efficient or self-destructive — whether campaigns work together or compete against each other.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">L3</span></div>
+          <div class="step-body">
+            <div class="step-title">Intelligence Layer</div>
+            <div class="step-desc">First-party data strategy: Customer Match lists, CLV signals, profit-based bidding, CRM integration, and offline conversion feedback loops. This is where accounts gain compounding advantage — <strong>data that competitors can't buy or replicate</strong>, because it comes from your own customers.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Operator Principle</div>
+        <div class="callout-text">Google's AI is only as good as the signal you give it. A tROAS bid strategy running on inflated, duplicated, or client-side-only conversions isn't smarter than manual bidding — it's smarter at optimizing toward the wrong thing. <strong>Fix the signal first. Everything else follows.</strong></div>
+      </div>
+
+      <h3 class="section-h3">Why most accounts plateau at the same point</h3>
+      <p class="body-p">The pattern is consistent across verticals: an account launches, grows, hits a ROAS target, and then flatlines — or starts regressing every time budget increases. The diagnosis is almost always the same: <strong>the account was built for activation, not for scale</strong>. It was set up to run, not to compound.</p>
+
+      <p class="body-p">Accounts built for scale look different from the start. They have a clean conversion stack, a separation between brand and non-brand capture, Performance Max structured with signal instead of left on defaults, and an audience strategy that feeds value — not just volume — back into the bidding system.</p>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Related reading in this guide</div>
+        <div class="cluster-link-item"><a href="#ch2">→ Chapter 2: Building the conversion tracking foundation</a><span class="cluster-link-type">Next</span></div>
+        <div class="cluster-link-item"><a href="#ch3">→ Chapter 3: Performance Max architecture</a><span class="cluster-link-type">Core</span></div>
+        <div class="cluster-link-item"><a href="#ch5">→ Chapter 5: Campaign structure that doesn't self-compete</a><span class="cluster-link-type">Core</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 2 ─── -->
+    <article class="chapter reveal" id="ch2">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">02 /</span>
+        <span class="chapter-tag">Infrastructure</span>
+      </div>
+      <h2 class="chapter-h2">Conversion Tracking <em>Infrastructure</em></h2>
+      <p class="chapter-lead">If your tracking is broken, your bidding is broken. Most accounts are working from a 30–60% signal deficit post-iOS14 and don't know it.</p>
+
+      <p class="body-p">Conversion tracking in 2026 is not what it was in 2020. Browser privacy restrictions, ad blockers, ITP (Intelligent Tracking Prevention), and the iOS14 ATT framework have systematically degraded client-side tracking. <strong>The accounts that haven't adapted are running their bidding algorithms on fabricated signal.</strong></p>
+
+      <div class="callout warn">
+        <div class="callout-label">Common Problem</div>
+        <div class="callout-text">Most accounts still rely on client-side Google Tag alone. Without enhanced conversions and server-side tracking, <strong>30–60% of actual conversions go unrecorded</strong>. The bidding AI sees a fraction of reality and adjusts accordingly — pulling spend from campaigns that are actually working, because it can't see the conversions they're driving.</div>
+      </div>
+
+      <h3 class="section-h3">The modern tracking stack</h3>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>Tool / Method</th>
+            <th>What it fixes</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Client-side base</strong></td>
+            <td>Google Tag (gtag.js) via GTM</td>
+            <td>Baseline conversion firing</td>
+            <td><span class="td-warn">▸ Table stakes</span></td>
+          </tr>
+          <tr>
+            <td><strong>Enhanced conversions</strong></td>
+            <td>Google Ads EC (hashed 1PD)</td>
+            <td>Cookie loss, iOS14, cross-device</td>
+            <td><span class="td-check">✓ High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Server-side tagging</strong></td>
+            <td>GTM Server-Side / Stape</td>
+            <td>Ad blockers, ITP, browser restrictions</td>
+            <td><span class="td-check">✓ High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Consent Mode v2</strong></td>
+            <td>Google Consent Mode + CMP</td>
+            <td>GDPR/cookie consent gaps, EU compliance</td>
+            <td><span class="td-check">✓ Required</span></td>
+          </tr>
+          <tr>
+            <td><strong>Offline conversion import</strong></td>
+            <td>OCI via GCLID / Zapier / CRM</td>
+            <td>Lead quality signal, B2B / lead gen</td>
+            <td><span class="td-check">✓ Critical for lead gen</span></td>
+          </tr>
+          <tr>
+            <td><strong>GA4 configuration</strong></td>
+            <td>GA4 + BigQuery export</td>
+            <td>Cross-channel attribution, audience building</td>
+            <td><span class="td-warn">▸ Medium</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-h3">Enhanced conversions: what it is and why it matters</h3>
+      <p class="body-p">Enhanced conversions work by taking first-party data collected at conversion (email address, phone number, name) — hashing it using SHA-256 — and sending it alongside the conversion hit. Google matches this against signed-in Google accounts to attribute conversions that would otherwise be lost to browser restrictions.</p>
+
+      <p class="body-p">The implementation requirement is straightforward: you need to be collecting at least one hashed identifier at the point of conversion (a form submission, a purchase). Most eCommerce stores do. Most lead gen pages do. <strong>The issue is implementation — it's almost never set up correctly by default.</strong></p>
+
+      <h3 class="section-h3">Server-side tracking: the architecture</h3>
+      <p class="body-p">Server-side tagging moves tag execution from the user's browser to a secure server you control. Instead of the browser firing a Google Ads conversion tag (which an ad blocker or ITP can intercept), your server receives the event data and forwards it to Google's endpoint directly.</p>
+
+      <p class="body-p">The infrastructure: a GTM Server container deployed on Google Cloud Run, Cloud Run, or via Stape's managed service. Your web container sends event data to a first-party endpoint (typically tracking.yourdomain.com), which forwards to Google Ads, GA4, Meta, and any other vendor tags. <strong>One first-party endpoint, multiple downstream vendor hits — invisible to ad blockers.</strong></p>
+
+      <h3 class="section-h3">Offline conversion import for lead gen accounts</h3>
+      <p class="body-p">For any account where the conversion isn't a purchase — healthcare, B2B, home services, legal — the most impactful tracking implementation is offline conversion import. The mechanism: capture the GCLID (Google Click ID) at form submission, pass it into your CRM, and when a lead becomes a qualified prospect or a booked appointment, import that conversion back into Google Ads with the original GCLID and timestamp.</p>
+
+      <p class="body-p">This closes the loop between ad click and actual business outcome. <strong>Google's bidding AI stops optimizing for form fills and starts optimizing for the leads that actually close.</strong> The CPA reduction this produces is typically 20–40% within 60 days.</p>
+
+      <div class="callout good">
+        <div class="callout-label">Case Result</div>
+        <div class="callout-text">A California addiction treatment center had a cost-per-lead of $115 with client-side tracking only. After implementing CallTrackingMetrics integration with offline conversion import — feeding qualified calls back to Google Ads — <strong>CPA dropped to $54 within 90 days</strong>. No budget increase. No new campaigns. Tracking fix only.</div>
+      </div>
+
+      <div class="content-cta-block">
+        <div class="content-cta-block-text">
+          <span class="content-cta-block-label">Is your tracking broken?</span>
+          <span class="content-cta-block-heading">Get a tracking infrastructure audit</span>
+        </div>
+        <a href="https://book.hanslacida.com" class="btn-primary">Book Fit Call →</a>
+      </div>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages — go deeper</div>
+        <div class="cluster-link-item"><a href="/google-ads-enhanced-conversions-setup/">→ Enhanced Conversions: Implementation Guide</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/server-side-tracking-google-ads/">→ Server-Side Tracking for Google Ads</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/offline-conversion-import-guide/">→ Offline Conversion Import: Step-by-Step</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/ga4-google-ads-integration/">→ GA4 + Google Ads: The Right Integration</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 3 ─── -->
+    <article class="chapter reveal" id="ch3">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">03 /</span>
+        <span class="chapter-tag">Performance Max</span>
+      </div>
+      <h2 class="chapter-h2">Performance Max <em>Architecture</em></h2>
+      <p class="chapter-lead">PMax is not a campaign type. It's an AI system that runs on whatever signal you give it. Give it garbage signal and it spends on garbage. Give it clean signal and it scales.</p>
+
+      <p class="body-p">Performance Max became mandatory for Smart Shopping replacements in 2022 and has been polarising ever since. The accounts where PMax works well are almost never the ones that "just set it up." They're the accounts that treated PMax as an AI system that needs to be trained — not a campaign that needs to be launched.</p>
+
+      <h3 class="section-h3">The five PMax mistakes that cost the most money</h3>
+
+      <ul class="content-list">
+        <li><strong>No asset group segmentation.</strong> Running all products in one asset group with one set of creatives is the default — and the worst possible configuration. Google can't differentiate intent across product categories, so it serves generalist creative to everyone.</li>
+        <li><strong>Missing audience signals.</strong> PMax has no keywords. It needs audience signals to understand who to target. Most accounts launch with no signals — leaving Google to figure out audience from scratch, which takes weeks and wastes budget.</li>
+        <li><strong>PMax and Standard Shopping running simultaneously without exclusions.</strong> Both campaign types compete for the same Shopping inventory. Without explicit brand exclusions in Search and separation of inventory, they bid against each other and inflate CPCs.</li>
+        <li><strong>Brand traffic captured by PMax and counted as new revenue.</strong> PMax will serve on branded queries, take credit for purchases that would have happened anyway, and show an inflated ROAS. Use brand exclusions in PMax to force brand traffic into a separate, low-tCPA campaign.</li>
+        <li><strong>No conversion value rules.</strong> PMax optimizes toward volume unless you tell it to prioritize value. Without conversion value rules that upweight high-margin products or high-LTV customer segments, it chases whatever converts fastest — which is usually the cheapest items.</li>
+      </ul>
+
+      <h3 class="section-h3">Asset group architecture that actually works</h3>
+      <p class="body-p">The principle: one asset group per audience signal cluster or product category. Not one asset group per campaign. Not one campaign with every product. <strong>Segment by intent, not by convenience.</strong></p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">01</span></div>
+          <div class="step-body">
+            <div class="step-title">Segment by product category or margin tier</div>
+            <div class="step-desc">High-margin products in one asset group, lower-margin in another. Seasonal products separated during peak periods. New arrivals isolated so Google can test them without disrupting proven performers.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">02</span></div>
+          <div class="step-body">
+            <div class="step-title">Build audience signals from real data</div>
+            <div class="step-desc">Upload Customer Match lists of recent converters. Add website visitors segmented by high-value behavior (purchased 2+, high AOV). Layer in-market audiences that match your buyer profile. <strong>The more specific the signal, the faster PMax calibrates.</strong></div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">03</span></div>
+          <div class="step-body">
+            <div class="step-title">Create asset groups that match the intent</div>
+            <div class="step-desc">Headlines, descriptions, images, and videos should reflect the specific product category and the specific customer who buys it. Generic "Shop Now" creative across every asset group is a signal quality failure, not a creative choice.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">04</span></div>
+          <div class="step-body">
+            <div class="step-title">Exclude brand, exclude irrelevant placements</div>
+            <div class="step-desc">Add brand terms to campaign-level negative keyword lists. Use placement exclusions for known low-quality display inventory (mobile apps, parked domains). Review the Placement Report weekly for the first 60 days.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Architecture Principle</div>
+        <div class="callout-text">PMax learns from conversion signal and audience signals — not from keywords. Your job is to give it the clearest possible picture of who your best customers are and what they bought. A Customer Match list of your top 500 customers is worth more than 10,000 keywords in a Standard Shopping campaign.</div>
+      </div>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages</div>
+        <div class="cluster-link-item"><a href="/performance-max-audit-guide/">→ How to Audit a Performance Max Campaign</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/performance-max-vs-standard-shopping/">→ Performance Max vs Standard Shopping: When to Use Each</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/performance-max-asset-groups/">→ Asset Group Structure: The Operator's Framework</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/pmax-brand-exclusions-guide/">→ PMax Brand Exclusions: Step-by-Step</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 4 ─── -->
+    <article class="chapter reveal" id="ch4">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">04 /</span>
+        <span class="chapter-tag">Data Strategy</span>
+      </div>
+      <h2 class="chapter-h2">First-Party Data <em>Strategy</em></h2>
+      <p class="chapter-lead">Third-party cookies are effectively dead. The accounts that will win in 2026 and beyond are the ones that built a first-party data moat — and activated it inside Google Ads.</p>
+
+      <p class="body-p">First-party data isn't a privacy trend. It's a performance lever. When you upload a Customer Match list of your 2,000 most recent buyers into Google Ads, you're giving the bidding algorithm a shortcut: <em>find more people who look like these people.</em> The accounts that do this consistently outperform on CPA by 15–35% compared to accounts running on third-party signals alone.</p>
+
+      <h3 class="section-h3">What first-party data means inside Google Ads</h3>
+      <ul class="content-list">
+        <li><strong>Customer Match.</strong> Upload email lists (hashed) of customers, recent purchasers, high-LTV segments, or churned customers. Use them as positive audience signals for bidding uplift or as exclusion lists to prevent wasted retargeting spend on existing buyers.</li>
+        <li><strong>Enhanced conversions.</strong> Hashed customer data passed at conversion time, improving Google's ability to match conversions across devices and in cookie-restricted environments.</li>
+        <li><strong>Conversion value rules.</strong> Tell Google which conversions are worth more — by customer segment, by device, by location. A repeat buyer converting on mobile in a high-LTV geography should trigger different bidding behavior than a new customer converting on desktop.</li>
+        <li><strong>Profit-based conversion values.</strong> Instead of sending revenue as conversion value, send margin. Google optimizes toward profit, not topline — which changes bidding decisions on every campaign that runs tROAS.</li>
+        <li><strong>Offline conversion import with CRM data.</strong> Close the loop between ad click and real business outcome. Every deal closed, every appointment booked, every qualified lead that converted — imported back to Google with the original GCLID.</li>
+      </ul>
+
+      <h3 class="section-h3">Building the data pipeline</h3>
+      <p class="body-p">The pipeline doesn't require a data engineering team. It requires a clear data flow from point of sale or CRM to Google Ads — automated, scheduled, and audited monthly.</p>
+
+      <p class="body-p">For eCommerce on Shopify: the customer purchase data exports nightly to a Google Sheet or BigQuery table, which feeds into a Customer Match upload via the Google Ads API or a tool like Zapier. For lead gen on HubSpot or Salesforce: deal stage changes trigger a webhook that formats and imports the GCLID back to Google Ads as an offline conversion.</p>
+
+      <p class="body-p"><strong>The setup cost is one-time. The compounding advantage is ongoing.</strong> Every month, your Customer Match list gets more current, your conversion signal gets more accurate, and your bidding AI makes marginally better decisions than a competitor running on default signals.</p>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages</div>
+        <div class="cluster-link-item"><a href="/customer-match-google-ads-guide/">→ Customer Match: Setup, Strategy, and Activation</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/profit-based-bidding-google-ads/">→ Profit-Based Bidding: Sending Margin as Conversion Value</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/first-party-data-google-ads-2026/">→ First-Party Data Strategy in 2026</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 5 ─── -->
+    <article class="chapter reveal" id="ch5">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">05 /</span>
+        <span class="chapter-tag">Architecture</span>
+      </div>
+      <h2 class="chapter-h2">Campaign Structure <em>That Scales</em></h2>
+      <p class="chapter-lead">Accounts that can't scale have architecture problems, not budget problems. The structure either supports growth or actively prevents it.</p>
+
+      <p class="body-p">The most common reason an account's ROAS collapses when budget increases: the campaigns are competing against each other. Two search campaigns targeting overlapping keyword themes bid each other up in the same auction. PMax and Standard Shopping split the same conversion signal across two learning algorithms. Brand and non-brand traffic blended into the same campaigns means bidding decisions are made on mixed intent.</p>
+
+      <h3 class="section-h3">The core structure principles</h3>
+
+      <ul class="content-list">
+        <li><strong>Isolate brand from non-brand.</strong> Brand terms convert at high rates and low CPCs. Running them in the same campaigns as non-brand terms distorts ROAS — and means your smart bidding strategy is partly optimizing for conversions you'd have gotten anyway. Separate campaigns, separate budgets, separate performance benchmarks.</li>
+        <li><strong>One conversion objective per campaign.</strong> A campaign that has both "purchase" and "add to cart" as primary conversion actions will optimise toward whatever happens more frequently — which is usually the lower-intent action. Set primary conversion actions at campaign level.</li>
+        <li><strong>Match type discipline.</strong> The era of "just run broad and let Google figure it out" requires a clean negative keyword framework to function. Exact match for known high-performers. Phrase match for intent clusters. Broad match only when paired with Smart Bidding and a strong conversion signal — and monitored weekly.</li>
+        <li><strong>Budget allocation by intent tier.</strong> High-intent branded search gets a protected budget. Non-brand exact gets a separate allocation. PMax and Shopping share a third pool. Discovery and awareness sit in a fourth. Each serves a different part of the funnel and shouldn't fight for the same budget.</li>
+        <li><strong>One PMax campaign per inventory signal cluster.</strong> Not one PMax campaign with every product. The AI learns faster and spends more efficiently when it's working with a coherent product set and a coherent audience signal.</li>
+      </ul>
+
+      <h3 class="section-h3">The account health checklist</h3>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Signal</th>
+            <th>Healthy</th>
+            <th>Broken</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Conversion count per 30 days</td>
+            <td><span class="td-check">50+</span> per campaign with Smart Bidding</td>
+            <td><span class="td-x">< 30</span> — Smart Bidding is guessing</td>
+          </tr>
+          <tr>
+            <td>Duplicate conversion actions</td>
+            <td><span class="td-check">None</span> — one action per conversion type</td>
+            <td><span class="td-x">Multiple</span> purchase actions inflating count</td>
+          </tr>
+          <tr>
+            <td>Brand in non-brand campaigns</td>
+            <td><span class="td-check">Excluded</span> at campaign level</td>
+            <td><span class="td-x">Mixed</span> — distorting ROAS and CPA</td>
+          </tr>
+          <tr>
+            <td>PMax + Standard Shopping overlap</td>
+            <td><span class="td-check">Separated</span> with explicit exclusion logic</td>
+            <td><span class="td-x">Running simultaneously</span> cannibalising</td>
+          </tr>
+          <tr>
+            <td>Negative keyword coverage</td>
+            <td><span class="td-check">Reviewed weekly</span> via search terms report</td>
+            <td><span class="td-x">Not updated</span> in 60+ days</td>
+          </tr>
+          <tr>
+            <td>Bidding strategy count</td>
+            <td><span class="td-check">2–3</span> max, aligned to funnel stage</td>
+            <td><span class="td-x">5+</span> — conflicting objectives</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages</div>
+        <div class="cluster-link-item"><a href="/google-ads-campaign-structure-guide/">→ Google Ads Campaign Structure: The 2026 Framework</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/google-ads-negative-keywords-strategy/">→ Negative Keyword Strategy: How to Build a Permanent Framework</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/brand-vs-nonbrand-google-ads/">→ Brand vs Non-Brand Campaign Separation</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 6 ─── -->
+    <article class="chapter reveal" id="ch6">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">06 /</span>
+        <span class="chapter-tag">Vertical Execution</span>
+      </div>
+      <h2 class="chapter-h2">Vertical <em>Playbooks</em></h2>
+      <p class="chapter-lead">The infrastructure principles are universal. The execution details are vertical-specific. Here's what changes by industry.</p>
+
+      <h3 class="section-h3">eCommerce</h3>
+      <p class="body-p">The eCommerce challenge is signal quality + margin optimisation. Most stores optimise for revenue ROAS when they should be optimising for margin ROAS. A 6× revenue ROAS on a 15% margin product is a 0.9× margin ROAS — you're losing money at scale.</p>
+
+      <ul class="content-list">
+        <li><strong>Feed quality is the foundation.</strong> Google Shopping serves based on product data quality. Titles with buyer-intent keywords, correct GTINs, complete attributes, and accurate pricing outperform identical products with thin feed data.</li>
+        <li><strong>Segment PMax by product margin.</strong> High-margin SKUs in one asset group with a higher tROAS target. Commoditised SKUs in a second group with tighter targets or Standard Shopping instead of PMax.</li>
+        <li><strong>BFCM and seasonal planning.</strong> Seasonal budget scaling should be planned 3 weeks ahead — not reactive. Smart Bidding needs time to adjust. Launching a budget increase 3 days before Black Friday means you're paying peak CPCs with a learning algorithm still calibrating.</li>
+      </ul>
+
+      <div class="content-results">
+        <div class="content-result">
+          <div class="content-result-num">70×</div>
+          <div class="content-result-desc">Peak ROAS — ebike / sporting goods (AU/NZ). Seasonal scaling with PMax + Search, 6-week window.</div>
+          <div class="content-result-tag">AU/NZ · eCommerce</div>
+        </div>
+        <div class="content-result">
+          <div class="content-result-num">$4M+</div>
+          <div class="content-result-desc">Tracked eCommerce revenue in a single 30-day optimisation window. Shopping + PMax restructure.</div>
+          <div class="content-result-tag">eCommerce · 30-Day</div>
+        </div>
+      </div>
+
+      <h3 class="section-h3">Healthcare & Lead Gen</h3>
+      <p class="body-p">Healthcare and high-intent lead gen (legal, financial, B2B) share a common problem: the form fill is not the conversion. The conversion is the qualified lead, the booked appointment, the closed deal. <strong>The only way to tell Google's AI what you actually care about is offline conversion import.</strong></p>
+
+      <ul class="content-list">
+        <li><strong>TCPA compliance.</strong> Healthcare campaigns in the US must navigate TCPA (Telephone Consumer Protection Act) compliance at every touchpoint — from keyword targeting to call extension handling. This isn't optional and the ad account is not protected from client-side violations.</li>
+        <li><strong>Hyperlocal geo targeting.</strong> For addiction treatment, behavioral health, and medspa, the decision to seek treatment is local. Radius targeting around the facility, combined with location-specific ad copy, significantly outperforms broad geo targeting.</li>
+        <li><strong>Call tracking integration.</strong> CallTrackingMetrics or CallRail integrated with Google Ads to import answered calls, calls over 90 seconds, and calls resulting in bookings — not just call clicks.</li>
+      </ul>
+
+      <h3 class="section-h3">B2B & High-CPC Industrial</h3>
+      <p class="body-p">B2B Google Ads at $50–$300 CPCs requires fundamentally different logic. Every wasted click costs a dinner. The structure must be surgical: exact match or tightly controlled phrase match, aggressive negative keyword management, and bid adjustments by device (mobile almost never converts in B2B — adjust down aggressively).</p>
+
+      <div class="callout good">
+        <div class="callout-label">B2B Case Result</div>
+        <div class="callout-text">Engine manufacturing client, $300K/mo spend. CPA reduced 39% ($23 → $14) through keyword restructuring, device bid adjustments, and offline conversion import from Salesforce. <strong>$551.9M in sales tracked. 115× ROAS at peak.</strong></div>
+      </div>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Vertical-specific cluster pages</div>
+        <div class="cluster-link-item"><a href="/google-ads-for-ecommerce/">→ Google Ads for eCommerce: The Full Playbook</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/google-ads-for-healthcare-lead-gen/">→ Google Ads for Healthcare & Treatment Centers</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/google-ads-for-b2b/">→ Google Ads for B2B: High-CPC Environment Strategy</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/google-ads-for-local-services/">→ Google Ads for Multi-Location Local Businesses</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 7 ─── -->
+    <article class="chapter reveal" id="ch7">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">07 /</span>
+        <span class="chapter-tag">Bidding & Budget</span>
+      </div>
+      <h2 class="chapter-h2">Bidding Strategy <em>& Budget Frameworks</em></h2>
+      <p class="chapter-lead">Smart Bidding is not a replacement for thinking. It's a multiplier on the quality of your conversion signal and the clarity of your campaign objective.</p>
+
+      <p class="body-p">The most common bidding mistake: launching Smart Bidding before the account has the conversion volume to sustain it. Google requires a minimum of 30–50 conversions per month per campaign for tCPA and tROAS to function reliably. Below that threshold, Smart Bidding is making decisions with insufficient data — which typically means erratic performance and budget waste.</p>
+
+      <h3 class="section-h3">Bidding strategy by account stage</h3>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Monthly conversions</th>
+            <th>Recommended strategy</th>
+            <th>Note</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>New account</td>
+            <td>0–30</td>
+            <td>Maximize Conversions (no target)</td>
+            <td>Build data before adding targets</td>
+          </tr>
+          <tr>
+            <td>Growing</td>
+            <td>30–80</td>
+            <td>tCPA or tROAS with conservative targets</td>
+            <td>Set targets 20–30% looser than goal</td>
+          </tr>
+          <tr>
+            <td>Scaled</td>
+            <td>80+</td>
+            <td>tROAS or Maximize Conv. Value</td>
+            <td>Tighten targets incrementally</td>
+          </tr>
+          <tr>
+            <td>High-volume</td>
+            <td>200+</td>
+            <td>Portfolio bid strategies across campaigns</td>
+            <td>Enables cross-campaign optimisation</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-h3">Budget allocation framework</h3>
+      <p class="body-p">A working budget framework for a mature Google Ads account, assuming $30K/mo total spend as baseline:</p>
+
+      <ul class="content-list">
+        <li><strong>Brand search (10–15% of budget).</strong> Protected, separate campaign. Never reduce — it's the highest-ROAS inventory in the account. Capped to impression share to avoid overspend on branded queries.</li>
+        <li><strong>Non-brand search / exact match (25–35%).</strong> Core demand capture. High-intent, controlled. This is where proven keywords live and where structure matters most.</li>
+        <li><strong>Performance Max / Shopping (35–45%).</strong> The growth engine. Requires the strongest conversion signal and clear asset group segmentation to perform. Scale when ROAS is stable for 3+ consecutive weeks.</li>
+        <li><strong>Demand Gen / YouTube (10–15%).</strong> Upper-funnel, audience warming. Measured on view-through and assisted conversion, not last-click ROAS. Don't cut this when direct ROAS looks soft — it's feeding the bottom of funnel.</li>
+      </ul>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages</div>
+        <div class="cluster-link-item"><a href="/google-ads-smart-bidding-guide/">→ Smart Bidding Guide: tCPA vs tROAS vs Max Conv Value</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/google-ads-budget-allocation-framework/">→ Budget Allocation for Scaled Google Ads Accounts</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 8 ─── -->
+    <article class="chapter reveal" id="ch8">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">08 /</span>
+        <span class="chapter-tag">Measurement</span>
+      </div>
+      <h2 class="chapter-h2">Reporting <em>& Measurement Systems</em></h2>
+      <p class="chapter-lead">If your report shows activity, you're reporting for the agency. If it shows outcome, you're reporting for the business.</p>
+
+      <p class="body-p">Most Google Ads reports answer: what did we do? Impressions, clicks, CTR, spend. The report the business needs answers: did it work? Revenue, ROAS, margin contribution, CPA vs LTV, organic cannibalisation rate, new customer acquisition rate vs retention.</p>
+
+      <h3 class="section-h3">The metrics that matter by business type</h3>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Business type</th>
+            <th>Primary KPIs</th>
+            <th>Secondary KPIs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>eCommerce</strong></td>
+            <td>ROAS (margin-adjusted), New Customer CPA, Blended MER</td>
+            <td>Product-level ROAS, Cart abandonment rate, LTV cohort</td>
+          </tr>
+          <tr>
+            <td><strong>Lead Gen</strong></td>
+            <td>Cost per qualified lead, Lead-to-close rate, CPL by campaign</td>
+            <td>Form completion rate, Call answer rate, GCLID match rate</td>
+          </tr>
+          <tr>
+            <td><strong>B2B</strong></td>
+            <td>Pipeline contribution, Cost per SQL, Deal velocity</td>
+            <td>Impressions per target account, Assisted conversions, CPM by segment</td>
+          </tr>
+          <tr>
+            <td><strong>Local Services</strong></td>
+            <td>Cost per booked appointment, Show rate, Revenue per location</td>
+            <td>Call answer rate, Review conversion, GBP engagement</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 class="section-h3">Looker Studio dashboard architecture</h3>
+      <p class="body-p">A functioning reporting setup for a Google Ads account pulls from three sources: Google Ads API (campaign performance), GA4 (user behavior, assisted paths), and CRM/backend (revenue, margin, lead stage). These are blended in BigQuery or via a connector like Windsor.ai or Supermetrics, then visualised in Looker Studio.</p>
+
+      <p class="body-p">The dashboard is not a report for the agency. It's a decision tool for the operator. <strong>Every metric on the page should drive an action</strong> — an alert, a budget reallocation, a negative keyword addition, or a bidding adjustment. If a metric doesn't drive action, it's decoration.</p>
+
+      <div class="cluster-links">
+        <div class="cluster-links-head">Cluster pages</div>
+        <div class="cluster-link-item"><a href="/google-ads-reporting-framework/">→ Google Ads Reporting: What to Measure and Why</a><span class="cluster-link-type">Cluster</span></div>
+        <div class="cluster-link-item"><a href="/looker-studio-google-ads-dashboard/">→ Building a Google Ads Dashboard in Looker Studio</a><span class="cluster-link-type">Cluster</span></div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 9 ─── -->
+    <article class="chapter reveal" id="ch9">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">09 /</span>
+        <span class="chapter-tag">Troubleshooting</span>
+      </div>
+      <h2 class="chapter-h2">Common Failure Modes <em>& Fixes</em></h2>
+      <p class="chapter-lead">Most Google Ads problems are structural, not strategic. They're fixable without changing objectives — just the infrastructure beneath them.</p>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">F1</span></div>
+          <div class="step-body">
+            <div class="step-title">ROAS looks great. Revenue doesn't match.</div>
+            <div class="step-desc"><strong>Cause:</strong> Duplicate conversion actions inflating reported conversions. Returns not deducted from conversion value. PMax claiming branded conversions. <strong>Fix:</strong> Audit conversion action configuration, implement post-return revenue correction, add brand exclusions to PMax.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">F2</span></div>
+          <div class="step-body">
+            <div class="step-title">ROAS drops every time you increase budget.</div>
+            <div class="step-desc"><strong>Cause:</strong> Campaign structure can't sustain the volume. Smart Bidding is forced to reach lower-quality traffic to spend the budget. <strong>Fix:</strong> Separate high-intent campaigns with protected budgets. Add a Performance Max campaign to absorb scale while search campaigns hold tight targets.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">F3</span></div>
+          <div class="step-body">
+            <div class="step-title">Lead volume is high. Lead quality is low.</div>
+            <div class="step-desc"><strong>Cause:</strong> Google optimising for form fills, not qualified leads. No offline conversion import. Broad match pulling low-intent queries. <strong>Fix:</strong> Implement OCI from CRM, tighten match types, add qualifying friction to the landing page (budget field, timeline question).</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">F4</span></div>
+          <div class="step-body">
+            <div class="step-title">PMax is spending but can't tell where.</div>
+            <div class="step-desc"><strong>Cause:</strong> Single asset group, no segmentation. Default placement settings. No conversion value rules. <strong>Fix:</strong> Restructure into segmented asset groups, enable Placement Report review, add audience signals, and implement brand exclusions.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num-col"><span class="step-num">F5</span></div>
+          <div class="step-body">
+            <div class="step-title">Campaign performs well then collapses for no visible reason.</div>
+            <div class="step-desc"><strong>Cause:</strong> Usually a tracking change — GTM update, website change, or GA4 configuration drift that silently broke the conversion signal. <strong>Fix:</strong> Run conversion action audit weekly. Set up conversion count alerts in Google Ads scripts or Looker Studio. Review any GTM changes in the past 30 days.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-cta-block">
+        <div class="content-cta-block-text">
+          <span class="content-cta-block-label">Recognise one of these?</span>
+          <span class="content-cta-block-heading">Let's audit the account together — 15 minutes.</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="https://book.hanslacida.com" class="btn-primary">Book Fit Call →</a>
+          <a href="/results/" class="btn-ghost">See case studies</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ─── CHAPTER 10 — FAQ ─── -->
+    <article class="chapter reveal" id="ch10">
+      <div class="chapter-eyebrow">
+        <span class="chapter-num">10 /</span>
+        <span class="chapter-tag">FAQs</span>
+      </div>
+      <h2 class="chapter-h2">Frequently Asked <em>Questions</em></h2>
+      <p class="chapter-lead">The questions founders and operators ask most often before committing to a tracking overhaul or campaign restructure.</p>
+
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What is a Google Ads paid acquisition system?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">A paid acquisition system is the infrastructure layer beneath campaigns — the conversion tracking, audience signals, campaign architecture, bidding strategy, and first-party data pipeline that determines whether Google's AI makes good decisions on your budget. <strong>Campaigns stop when the budget stops. Systems compound.</strong> The difference shows up at scale: a system keeps improving as data accumulates; a collection of campaigns just spends.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Why does Performance Max underperform for most advertisers?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">Performance Max underperforms because it requires high-quality conversion signals to make intelligent bidding decisions. Without server-side tracking, enhanced conversions, and correct asset group architecture, PMax optimises toward low-quality traffic and wastes 40–60% of budget on placements that never convert. The accounts where PMax works well have treated it as an AI system that needs to be trained — not a campaign to launch and ignore.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How much ad spend is typically wasted due to broken tracking?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">In most accounts running client-side-only tracking with no enhanced conversions, 30–60% of actual conversions go unrecorded post-iOS14. This means Google's bidding AI is working from an incomplete signal — optimising toward whatever it can measure, which is often not what actually drives revenue. The accounts that have fixed this consistently see 20–40% improvement in apparent CPA simply because the algorithm finally has accurate data to work with.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            What is the difference between enhanced conversions and server-side tracking?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">Enhanced conversions are a Google-native feature that hashes first-party data (email, phone) from conversion events to improve match rates in cookieless environments. <strong>Server-side tracking</strong> moves the tracking tag from the browser to a secure server, preventing ad blockers and browser privacy restrictions from killing the signal. Both work together — enhanced conversions on top of server-side tracking is the current gold standard for accounts spending $10K+/month.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How do I know if my Google Ads account needs a structural rebuild?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">Signs you need a structural rebuild: ROAS fluctuates wildly when you change budgets, campaigns are competing against each other in the same auction, you have more than 3–4 bidding strategies running simultaneously, your PMax and Standard Shopping are overlapping, or your conversion tracking shows duplicate or inflated conversion counts. If three or more of these are true, the problem isn't performance — it's architecture.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            How long does it take to see results after a campaign restructure?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">Tracking fixes show measurable impact within 2–4 weeks as the bidding algorithm receives cleaner signal. Campaign architecture changes typically require a 30–45 day learning period before performance stabilises. Full system optimisation — tracking + structure + first-party data pipeline — typically shows its full compounding impact at the 90-day mark. The changes that matter most are not the ones that show up in week 1.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q" onclick="toggleFaq(this)">
+            Do I need a large budget for first-party data strategy to matter?
+            <span class="faq-q-arrow">↓</span>
+          </div>
+          <div class="faq-a">Customer Match requires a minimum list size of 1,000 records for Google to use it as an active audience signal. For most eCommerce stores doing $30K+/month, this is achievable within 6–12 months of customer data. For lead gen businesses, offline conversion import is effective from day one with any volume — it's a signal quality improvement, not a scale requirement.</div>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- ─── AUTHOR BOX ─── -->
+    <div class="author-box reveal">
+      <div class="author-box-left">
+        <div class="author-initial">H</div>
+      </div>
+      <div>
+        <div class="author-box-name">Hans Lacida</div>
+        <div class="author-box-title">Paid Acquisition Systems Operator · Zeldigital.com</div>
+        <div class="author-box-bio">10+ years operating Google Ads accounts across eCommerce, healthcare, B2B, and home services. Former Google Ads Account Strategist. $550M+ in attributed client revenue across 11+ documented case studies. Specialises in Performance Max architecture, conversion tracking infrastructure, and first-party data strategy for US market founders and operators.</div>
+        <div class="author-box-creds">
+          <div class="author-cred">Former Google Ads Partner Program — 2020–2023</div>
+          <div class="author-cred">Google Ads Search Certified</div>
+          <div class="author-cred">18 published working papers on Zenodo (ORCID verified)</div>
+          <div class="author-cred">Founder, Zeldigital Corporation (OPC)</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ─── BOTTOM CTA ─── -->
+<div style="background: var(--bg-3); border-top: 1px solid var(--border);">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 80px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+    <div>
+      <div style="font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">What happens next</div>
+      <div style="font-family: var(--serif); font-size: clamp(28px, 3.5vw, 44px); color: var(--text-primary); line-height: 1.1; margin-bottom: 16px;">If the account is broken, <em>it's fixable.</em></div>
+      <p style="font-family: var(--sans); font-size: 15px; color: var(--text-secondary); line-height: 1.75; max-width: 440px; margin-bottom: 28px;">15 minutes to determine whether there's a real match between what your account needs and what I build. Not a sales call. An operator conversation.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="https://book.hanslacida.com" class="btn-primary">Book 15-Min Fit Call →</a>
+        <a href="/results/" class="btn-ghost">View case studies</a>
+      </div>
+    </div>
+    <div style="border: 1px solid var(--border); background: var(--bg-2); padding: 32px;">
+      <div style="font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 16px;">Cluster pages from this guide</div>
+      <div style="display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border);">
+        <a href="/google-ads-enhanced-conversions-setup/" style="display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--bg-3)'" onmouseout="this.style.background=''">
+          <span style="font-family:var(--sans);font-size:13px;color:var(--text-secondary);">Enhanced Conversions Setup Guide</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">→</span>
+        </a>
+        <a href="/server-side-tracking-google-ads/" style="display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--bg-3)'" onmouseout="this.style.background=''">
+          <span style="font-family:var(--sans);font-size:13px;color:var(--text-secondary);">Server-Side Tracking for Google Ads</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">→</span>
+        </a>
+        <a href="/performance-max-audit-guide/" style="display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--bg-3)'" onmouseout="this.style.background=''">
+          <span style="font-family:var(--sans);font-size:13px;color:var(--text-secondary);">How to Audit a PMax Campaign</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">→</span>
+        </a>
+        <a href="/customer-match-google-ads-guide/" style="display:flex;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--bg-3)'" onmouseout="this.style.background=''">
+          <span style="font-family:var(--sans);font-size:13px;color:var(--text-secondary);">Customer Match Setup & Strategy</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">→</span>
+        </a>
+        <a href="/google-ads-for-ecommerce/" style="display:flex;justify-content:space-between;padding:12px 16px;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--bg-3)'" onmouseout="this.style.background=''">
+          <span style="font-family:var(--sans);font-size:13px;color:var(--text-secondary);">eCommerce Google Ads Playbook</span>
+          <span style="font-family:var(--mono);font-size:10px;color:var(--accent);">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ─── -->
+<footer style="border-top: 1px solid var(--border); background: var(--bg); padding: 48px 40px 36px; max-width: 1200px; margin: 0 auto;">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+    <div>
+      <div style="font-family:var(--serif);font-size:18px;color:var(--text-primary);margin-bottom:6px;">Hans<span style="color:var(--accent);">.</span>Lacida</div>
+      <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);">Paid Acquisition Systems Operator</div>
+    </div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;">
+      <a href="/" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;">Home</a>
+      <a href="/results/" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;">Results</a>
+      <a href="/playbook/" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;">Playbook</a>
+      <a href="https://book.hanslacida.com" style="font-family:var(--mono);font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);text-decoration:none;border:1px solid var(--accent);padding:6px 14px;">Book Fit Call</a>
+    </div>
+  </div>
+  <div style="border-top:1px solid var(--border);margin-top:32px;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--text-muted);">© 2026 Hans Lacida · All rights reserved · hanslacida.com</span>
+    <span style="font-family:var(--mono);font-size:10px;letter-spacing:0.08em;color:var(--text-muted);">URL: hanslacida.com/google-ads-paid-acquisition-systems/</span>
+  </div>
+</footer>
+
+<script>
+  // ─── SCROLL REVEAL ───
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ─── READING PROGRESS ───
+  const progressFill = document.getElementById('progressFill');
+  const progressLabel = document.getElementById('progressLabel');
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const pct = Math.min(100, Math.round((scrollTop / docHeight) * 100));
+    if (progressFill) { progressFill.style.width = pct + '%'; }
+    if (progressLabel) { progressLabel.textContent = pct + '% read'; }
+  });
+
+  // ─── ACTIVE TOC LINK ───
+  const chapters = document.querySelectorAll('.chapter');
+  const tocLinks = document.querySelectorAll('.toc-item a');
+  const chapObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.toc-item a[href="#' + e.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.3, rootMargin: '-64px 0px -50% 0px' });
+  chapters.forEach(c => chapObs.observe(c));
+
+  // ─── FAQ TOGGLE ───
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
