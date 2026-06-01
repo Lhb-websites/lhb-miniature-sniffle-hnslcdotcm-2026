@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZELDIGITAL — Shopify & eCommerce Google Ads Results | Hans Lacida</title>
+<meta name="description" content="Verified Google Ads, Amazon Ads, and TikTok Ads results for Shopify and eCommerce brands. ROAS case studies from Hans Lacida — Paid Acquisition Systems Operator.">
+<meta name="keywords" content="shopify google ads specialist, ecommerce google ads, pmax shopify, google shopping expert, shopify paid ads, ecommerce roas">
+<link rel="canonical" href="https://zeldigital.com/results/shopify-ecommerce">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Shopify & eCommerce Paid Ads Results — ZELDIGITAL",
+  "description": "Google Ads, Amazon Ads, and TikTok Ads case studies for Shopify and eCommerce brands. Verified results by Hans Lacida.",
+  "author": {
+    "@type": "Person",
+    "name": "Hans Lacida",
+    "jobTitle": "Paid Acquisition Systems Operator",
+    "url": "https://zeldigital.com"
+  },
+  "publisher": { "@type": "Organization", "name": "ZELDIGITAL", "url": "https://zeldigital.com" }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;1,9..40,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<style>
+  :root {
+    --zel: #00C6A7;
+    --zel-dim: rgba(0,198,167,0.12);
+    --gold: #F5C842;
+    --gold-dim: rgba(245,200,66,0.1);
+    --shopify: #96BF48;
+    --shopify-dim: rgba(150,191,72,0.1);
+    --amazon: #FF9900;
+    --amazon-dim: rgba(255,153,0,0.1);
+    --tiktok: #EE1D52;
+    --tiktok-dim: rgba(238,29,82,0.1);
+    --google: #4285F4;
+    --google-dim: rgba(66,133,244,0.1);
+    --bg: #0A0A0A;
+    --surface: #111111;
+    --surface2: #161616;
+    --border: rgba(255,255,255,0.07);
+    --text: #F0EDE8;
+    --muted: #7A7774;
+    --danger: #FF4444;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px; line-height: 1.6; overflow-x: hidden;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.03; pointer-events: none; z-index: 9999;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 90vh; display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 5rem 1.5rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg { position: absolute; inset: 0; z-index: 0; }
+  .hero-bg::before {
+    content: ''; position: absolute;
+    top: -10%; left: -5%; width: 60%; height: 70%;
+    background: radial-gradient(ellipse, rgba(150,191,72,0.1) 0%, transparent 65%);
+  }
+  .hero-bg::after {
+    content: ''; position: absolute;
+    top: -10%; right: -5%; width: 60%; height: 70%;
+    background: radial-gradient(ellipse, rgba(0,198,167,0.12) 0%, transparent 65%);
+  }
+  .hero-divider {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1) 30%, rgba(255,255,255,0.1) 70%, transparent);
+    z-index: 1;
+  }
+  .eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.68rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 1.5rem; position: relative; z-index: 2; opacity: 0;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 9vw, 8rem);
+    line-height: 0.9; letter-spacing: 0.02em;
+    position: relative; z-index: 2; opacity: 0; margin-bottom: 0.5rem;
+  }
+  .hero-title .shopify-text { color: var(--shopify); }
+  .hero-title .amp { color: var(--muted); font-size: 0.6em; }
+  .hero-title .ecomm { color: var(--zel); }
+  .hero-sub {
+    max-width: 560px; margin: 1.5rem auto 0;
+    font-size: 1rem; font-weight: 300; color: var(--muted);
+    position: relative; z-index: 2; opacity: 0;
+  }
+  .hero-sub strong { color: var(--text); font-weight: 600; }
+  .hero-platforms {
+    margin-top: 2rem; display: flex; gap: 0.6rem;
+    flex-wrap: wrap; justify-content: center;
+    position: relative; z-index: 2; opacity: 0;
+  }
+  .platform-pill {
+    font-family: 'Space Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.3em 0.85em; border-radius: 100px; border: 1px solid;
+  }
+  .pill-shopify { color: var(--shopify); border-color: rgba(150,191,72,0.3); background: var(--shopify-dim); }
+  .pill-google { color: var(--google); border-color: rgba(66,133,244,0.3); background: var(--google-dim); }
+  .pill-amazon { color: var(--amazon); border-color: rgba(255,153,0,0.3); background: var(--amazon-dim); }
+  .pill-tiktok { color: var(--tiktok); border-color: rgba(238,29,82,0.3); background: var(--tiktok-dim); }
+  .scroll-cue {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    font-family: 'Space Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; z-index: 2;
+  }
+  .scroll-line { width: 1px; height: 44px; background: linear-gradient(to bottom, var(--muted), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  @keyframes scrollPulse { 0%,100% { opacity: 0.4; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.15); } }
+
+  /* ─── LAYOUT ─── */
+  .section { padding: 5rem 1.5rem; max-width: 1280px; margin: 0 auto; }
+  .section-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.85rem; }
+  .section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 0.95; margin-bottom: 2.5rem; }
+  .full-divider { height: 1px; background: var(--border); margin: 0 1.5rem; }
+
+  /* ─── STATS BAR ─── */
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 1.5px; background: var(--border);
+    border: 1.5px solid var(--border); border-radius: 16px; overflow: hidden; margin-bottom: 4rem;
+  }
+  .stat-cell { background: var(--surface); padding: 1.5rem 1rem; text-align: center; transition: background 0.3s; }
+  .stat-cell:hover { background: var(--surface2); }
+  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; line-height: 1; color: var(--zel); margin-bottom: 0.25rem; }
+  .stat-num.gold { color: var(--gold); }
+  .stat-num.shopify { color: var(--shopify); }
+  .stat-label { font-family: 'Space Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); line-height: 1.5; }
+
+  /* ─── NDA CALLOUT ─── */
+  .nda-banner {
+    background: rgba(245,200,66,0.05); border: 1.5px solid rgba(245,200,66,0.2);
+    border-radius: 14px; padding: 1.25rem 1.5rem;
+    display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 3rem;
+  }
+  .nda-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.05rem; }
+  .nda-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .nda-text strong { color: var(--gold); }
+
+  /* ─── CASE CARD GRID ─── */
+  .cases-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1.5px; background: var(--border);
+    border: 1.5px solid var(--border); border-radius: 20px; overflow: hidden;
+  }
+  .cases-grid.two-col { grid-template-columns: 1fr 1fr; }
+
+  /* ─── CASE CARD ─── */
+  .case-card {
+    background: var(--surface); padding: 0;
+    position: relative; overflow: hidden; transition: background 0.3s;
+    display: flex; flex-direction: column;
+  }
+  .case-card:hover { background: var(--surface2); }
+  .case-card.featured { grid-column: 1 / -1; }
+
+  .case-header {
+    padding: 1.5rem 1.75rem 1.25rem;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .case-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; }
+  .case-card.shopify-card .case-header::before { background: var(--shopify); }
+  .case-card.google-card .case-header::before { background: var(--google); }
+  .case-card.amazon-card .case-header::before { background: var(--amazon); }
+  .case-card.tiktok-card .case-header::before { background: var(--tiktok); }
+  .case-card.multi-card .case-header::before { background: linear-gradient(90deg, var(--google), var(--amazon), var(--tiktok)); }
+
+  .case-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .case-platform-badge {
+    font-family: 'Space Mono', monospace; font-size: 0.56rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 0.25em 0.75em; border-radius: 100px; white-space: nowrap; flex-shrink: 0;
+  }
+  .badge-shopify { background: var(--shopify-dim); color: var(--shopify); }
+  .badge-google { background: var(--google-dim); color: var(--google); }
+  .badge-amazon { background: var(--amazon-dim); color: var(--amazon); }
+  .badge-tiktok { background: var(--tiktok-dim); color: var(--tiktok); }
+  .badge-multi { background: rgba(255,255,255,0.06); color: var(--text); }
+  .badge-nda {
+    font-family: 'Space Mono', monospace; font-size: 0.52rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.2em 0.65em; border-radius: 100px;
+    background: var(--gold-dim); color: var(--gold);
+  }
+
+  .case-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; color: var(--text); line-height: 1; margin-bottom: 0.3rem; }
+  .case-meta { font-size: 0.78rem; color: var(--muted); }
+
+  .case-body { padding: 1.25rem 1.75rem 1.5rem; flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+
+  /* ─── BEFORE / AFTER ─── */
+  .ba-split { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .ba-col { border-radius: 10px; padding: 1rem; }
+  .ba-col.before-col { background: #141414; border: 1px solid rgba(255,255,255,0.06); }
+  .ba-col.after-col { background: rgba(0,198,167,0.07); border: 1px solid rgba(0,198,167,0.2); }
+  .ba-label { font-family: 'Space Mono', monospace; font-size: 0.56rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .before-col .ba-label { color: var(--muted); }
+  .after-col .ba-label { color: var(--zel); }
+  .ba-item { font-size: 0.82rem; color: var(--muted); padding: 0.15rem 0; line-height: 1.4; display: flex; align-items: baseline; gap: 0.4rem; }
+  .ba-item.win { color: var(--zel); font-weight: 600; }
+  .ba-item.win::before { content: '✓'; font-size: 0.7rem; flex-shrink: 0; }
+  .ba-item.before-item::before { content: '·'; font-size: 1rem; color: var(--muted); flex-shrink: 0; }
+
+  /* ─── ROAS HIGHLIGHT ─── */
+  .roas-highlight {
+    background: linear-gradient(135deg, rgba(245,200,66,0.06), rgba(245,200,66,0.03));
+    border: 1px solid rgba(245,200,66,0.2);
+    border-radius: 10px; padding: 0.9rem 1rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .roas-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; line-height: 1; color: var(--gold); flex-shrink: 0; }
+  .roas-detail { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+  .roas-detail strong { color: var(--gold); font-size: 0.82rem; }
+
+  .case-impact {
+    font-size: 0.8rem; color: var(--muted);
+    padding-top: 0.85rem; border-top: 1px solid var(--border); line-height: 1.55;
+  }
+  .case-impact strong { color: var(--gold); }
+
+  /* ─── FEATURED CASE (WIDE) ─── */
+  .featured-inner {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    height: 100%;
+  }
+  .featured-left { padding: 2rem 2rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 1.25rem; }
+  .featured-right { padding: 2rem 2rem; display: flex; flex-direction: column; gap: 1.25rem; }
+
+  /* ─── PLATFORM SECTION LABEL ─── */
+  .platform-section-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; margin-top: 0.5rem;
+  }
+  .platform-section-line { flex: 1; height: 1px; background: var(--border); }
+  .platform-section-title { font-family: 'Space Mono', monospace; font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+
+  /* ─── SUMMARY STRIP ─── */
+  .summary-block {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 2.5rem 2rem; margin-bottom: 3rem;
+  }
+  .summary-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 1.5rem; color: var(--text); }
+  .roas-table { width: 100%; border-collapse: collapse; }
+  .roas-table tr { border-bottom: 1px solid var(--border); }
+  .roas-table tr:last-child { border-bottom: none; }
+  .roas-table td { padding: 0.75rem 0; font-size: 0.88rem; color: var(--muted); }
+  .roas-table td:first-child { color: var(--text); font-weight: 500; }
+  .roas-table td:last-child { text-align: right; font-family: 'Space Mono', monospace; font-size: 0.78rem; color: var(--gold); font-weight: 700; }
+  .roas-table .nda-row td { color: var(--muted); font-style: italic; }
+  .roas-table .nda-row td:last-child { color: rgba(245,200,66,0.5); }
+
+  /* ─── CTA ─── */
+  .cta-block {
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: 16px;
+    padding: 3rem 2rem; text-align: center; position: relative; overflow: hidden; margin-bottom: 3rem;
+  }
+  .cta-block::before {
+    content: 'SHOPIFY'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem,12vw,10rem);
+    color: rgba(255,255,255,0.02); pointer-events: none; white-space: nowrap; letter-spacing: 0.06em;
+  }
+  .cta-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.8rem; margin-bottom: 0.75rem; position: relative; z-index: 1; }
+  .cta-sub { font-size: 0.95rem; color: var(--muted); max-width: 540px; margin: 0 auto 2rem; position: relative; z-index: 1; line-height: 1.65; }
+  .cta-sub strong { color: var(--text); }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 1.75rem; border-radius: 8px; font-family: 'Space Mono', monospace; font-size: 0.72rem; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase; text-decoration: none; transition: all 0.25s; cursor: pointer; border: none; }
+  .btn-primary { background: var(--zel); color: #0A0A0A; }
+  .btn-primary:hover { background: #00e0bc; box-shadow: 0 0 28px rgba(0,198,167,0.4); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--muted); border: 1.5px solid var(--border); }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: var(--text); transform: translateY(-2px); }
+
+  /* ─── DISCLAIMER ─── */
+  .disclaimer { font-size: 0.75rem; color: var(--muted); line-height: 1.7; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .disclaimer strong { color: var(--text); }
+
+  /* ─── FOOTER ─── */
+  footer { padding: 3rem 1.5rem; text-align: center; font-family: 'Space Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; border-top: 1px solid var(--border); }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  .reveal { opacity: 0; transform: translateY(20px); }
+
+  @media (max-width: 900px) {
+    .cases-grid, .cases-grid.two-col { grid-template-columns: 1fr; }
+    .case-card.featured { grid-column: 1; }
+    .featured-inner { grid-template-columns: 1fr; }
+    .featured-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .ba-split { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 500px) {
+    .section { padding: 3.5rem 1rem; }
+    .stats-bar { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-divider"></div>
+  <p class="eyebrow">ZELDIGITAL · Paid Acquisition Results · eCommerce Focus</p>
+  <h1 class="hero-title">
+    <span class="shopify-text">Shopify</span>
+    <span class="amp"> & </span>
+    <span class="ecomm">eCommerce</span>
+  </h1>
+  <p class="hero-sub">
+    Google Ads, Amazon Ads & TikTok Ads results for Shopify and eCommerce brands.<br>
+    <strong>Profit-focused. Platform-agnostic. Operator-run.</strong>
+  </p>
+  <div class="hero-platforms">
+    <span class="platform-pill pill-shopify">Shopify</span>
+    <span class="platform-pill pill-google">Google Ads</span>
+    <span class="platform-pill pill-amazon">Amazon Ads</span>
+    <span class="platform-pill pill-tiktok">TikTok Ads</span>
+    <span class="platform-pill pill-google">Performance Max</span>
+    <span class="platform-pill pill-google">Google Shopping</span>
+  </div>
+  <div class="scroll-cue">
+    <div class="scroll-line"></div>
+    Scroll to results
+  </div>
+</section>
+
+<!-- ═══ STATS BAR ═══ -->
+<section class="section" style="padding-bottom:0">
+  <div class="stats-bar reveal">
+    <div class="stat-cell">
+      <div class="stat-num gold">70×</div>
+      <div class="stat-label">Peak ROAS<br>Shopify · AU/NZ</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num gold">20×</div>
+      <div class="stat-label">Peak ROAS<br>Shopify · US</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num shopify">$10M+</div>
+      <div class="stat-label">Ad Spend<br>Managed</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">$550M+</div>
+      <div class="stat-label">Client Revenue<br>Influenced</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num shopify">10+</div>
+      <div class="stat-label">eComm<br>Case Studies</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NDA NOTICE ═══ -->
+<section class="section" style="padding-top:3rem; padding-bottom:0">
+  <div class="nda-banner reveal">
+    <div class="nda-icon">🔒</div>
+    <div class="nda-text">
+      <strong>Active NDA Clients (April 2026 – Present):</strong> Two current eCommerce partnerships are under active NDA agreements. Public data points are limited to what has been cleared for disclosure. Platform, vertical, and directional performance are noted where permitted — account names, client identities, and specific account-level data are withheld per agreement. All other case studies below use fully anonymized historical data safe for public portfolio use.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACTIVE NDA CASES ═══ -->
+<section class="section" style="padding-top:2.5rem">
+  <p class="section-label reveal">Active Engagements · April 2026 – Present</p>
+  <h2 class="section-title reveal">Current Accounts.<br>NDA-Protected.</h2>
+
+  <div class="platform-section-header reveal">
+    <div class="platform-section-line"></div>
+    <div class="platform-section-title">Shopify · Google Ads · Amazon Ads · TikTok Ads (Multi-Platform)</div>
+    <div class="platform-section-line"></div>
+  </div>
+
+  <div class="cases-grid two-col reveal">
+
+    <!-- NDA Case 1 — Shopify US, Google + Amazon + TikTok -->
+    <div class="case-card multi-card featured">
+      <div class="case-header">
+        <div class="case-header-top">
+          <div>
+            <div class="case-title">Shopify eCommerce Brand — US Market</div>
+            <div class="case-meta">Paid Ads Scaling Partner · Google Ads + Amazon Ads + TikTok Ads · April 2026 – Present</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:0.35rem;align-items:flex-end;flex-shrink:0">
+            <span class="case-platform-badge badge-multi">Multi-Platform</span>
+            <span class="badge-nda">NDA Active</span>
+          </div>
+        </div>
+      </div>
+      <div class="featured-inner">
+        <div class="featured-left">
+          <div>
+            <div class="ba-label" style="color:var(--muted);font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.75rem">Role & Scope</div>
+            <div class="ba-item before-item">Paid Ads Scaling Partner — not just management</div>
+            <div class="ba-item before-item">Platforms: Google Ads, Amazon Ads, TikTok Ads</div>
+            <div class="ba-item before-item">Also acting as data analyst across channel attribution</div>
+            <div class="ba-item before-item">Shopify storefront — US audience</div>
+            <div class="ba-item before-item">Cross-channel performance reporting and optimization</div>
+          </div>
+          <div>
+            <div class="ba-label" style="color:var(--muted);font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.75rem">Channels Managed</div>
+            <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+              <span class="case-platform-badge badge-google">Google Search & PMax</span>
+              <span class="case-platform-badge badge-amazon">Amazon Sponsored</span>
+              <span class="case-platform-badge badge-tiktok">TikTok Ads</span>
+              <span class="case-platform-badge badge-shopify">Shopify Analytics</span>
+            </div>
+          </div>
+        </div>
+        <div class="featured-right">
+          <div class="roas-highlight">
+            <div class="roas-num">20×</div>
+            <div class="roas-detail">
+              <strong>Peak Google Ads ROAS — US Market</strong><br>
+              Directional figure cleared for disclosure. Exact account-level metrics withheld per NDA. Google Ads channel only.
+            </div>
+          </div>
+          <div>
+            <div class="ba-label" style="color:var(--zel);font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.6rem">What Can Be Said</div>
+            <div class="ba-item win">20× peak ROAS confirmed — Google Ads, US Shopify store</div>
+            <div class="ba-item win">Multi-platform coordination across Google, Amazon & TikTok</div>
+            <div class="ba-item win">Data analysis role across all channels — attribution & reporting</div>
+            <div class="ba-item win">Active ongoing partnership — not a one-time project</div>
+          </div>
+          <div class="case-impact">
+            <strong>NDA Scope:</strong> Client name, account IDs, specific revenue figures, and full ROAS breakdown withheld. Role confirmed as paid ads scaling partner and data analyst. Engagement active April 2026 to present.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- ═══ HISTORICAL ECOMM CASES ═══ -->
+  <div style="margin-top:4rem">
+    <div class="platform-section-header reveal">
+      <div class="platform-section-line"></div>
+      <div class="platform-section-title">Historical · Verified · Anonymized eCommerce Results</div>
+      <div class="platform-section-line"></div>
+    </div>
+
+    <div class="cases-grid reveal">
+
+      <!-- Ebike — 70x ROAS Shopify AU/NZ -->
+      <div class="case-card shopify-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Ebike & Sporting Goods</div>
+              <div class="case-meta">Shopify · AU & NZ · Sep–Nov 2026</div>
+            </div>
+            <span class="case-platform-badge badge-shopify">Shopify</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="roas-highlight">
+            <div class="roas-num">70×</div>
+            <div class="roas-detail">
+              <strong>Peak ROAS — Shopify AU/NZ</strong><br>
+              Google Search + PMax rebuild. BFCM scaling. AU East Coast geo-focus.
+            </div>
+          </div>
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">Before</div>
+              <div class="ba-item before-item">Fragmented campaign structure</div>
+              <div class="ba-item before-item">Weak geo targeting AU/NZ</div>
+              <div class="ba-item before-item">High search term waste</div>
+              <div class="ba-item before-item">No audience alignment</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">After</div>
+              <div class="ba-item win">Peak ROAS over 70×</div>
+              <div class="ba-item win">PMax + Search rebuilt</div>
+              <div class="ba-item win">Negatives & geo fixed</div>
+              <div class="ba-item win">Strong BFCM scaling</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>Impact:</strong> High-intent AU East Coast traffic · Improved ROAS stability · Lower wasted spend · Structure ready for scale
+          </div>
+        </div>
+      </div>
+
+      <!-- Furniture Brand -->
+      <div class="case-card shopify-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Furniture Brand</div>
+              <div class="case-meta">eCommerce · Mar–Apr 2022</div>
+            </div>
+            <span class="case-platform-badge badge-google">Google Ads</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="roas-highlight">
+            <div class="roas-num">2.6×</div>
+            <div class="roas-detail">
+              <strong>ROAS — Month-on-Month</strong><br>
+              Conversion value grew from $1.5M → $3.9M in a single month.
+            </div>
+          </div>
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">March</div>
+              <div class="ba-item before-item">Conversions: 1.89k</div>
+              <div class="ba-item before-item">Conv. Value: $1.5M</div>
+              <div class="ba-item before-item">Baseline ROAS</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">April</div>
+              <div class="ba-item win">Conversions: 2.10k</div>
+              <div class="ba-item win">Conv. Value: $3.9M</div>
+              <div class="ba-item win">ROAS: 2.6× (+160%)</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>Growth:</strong> 260% conversion value increase · 1.32M impressions · Optimized targeting
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Equipment -->
+      <div class="case-card google-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Security Equipment Retailer</div>
+              <div class="case-meta">eCommerce · Apr 2022 – Apr 2023</div>
+            </div>
+            <span class="case-platform-badge badge-google">Google Shopping</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="roas-highlight">
+            <div class="roas-num">21.5×</div>
+            <div class="roas-detail">
+              <strong>Peak ROAS · 9.06× aggregate</strong><br>
+              Conv. value grew from $139 to $14,201 in 12 months.
+            </div>
+          </div>
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">Apr 2022</div>
+              <div class="ba-item before-item">Conv. Value: $139</div>
+              <div class="ba-item before-item">ROAS: 0.17×</div>
+              <div class="ba-item before-item">Underperforming</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">Apr 2023</div>
+              <div class="ba-item win">Conv. Value: $14,201</div>
+              <div class="ba-item win">ROAS: 9.06× aggregate</div>
+              <div class="ba-item win">Peak: 21.55×</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>Impact:</strong> 10,117% conversion lift · 7.22× aggregate ROAS · $129.5K revenue
+          </div>
+        </div>
+      </div>
+
+      <!-- Clothesline -->
+      <div class="case-card shopify-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Clothesline Company</div>
+              <div class="case-meta">eCommerce · Sydney & Brisbane · Dec 2022 – Feb 2023</div>
+            </div>
+            <span class="case-platform-badge badge-google">Google Shopping</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">Campaign In</div>
+              <div class="ba-item before-item">423K impressions</div>
+              <div class="ba-item before-item">3,189 clicks</div>
+              <div class="ba-item before-item">Avg CPC: $1.20</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">Results</div>
+              <div class="ba-item win">4,400 conversions</div>
+              <div class="ba-item win">41 phone calls</div>
+              <div class="ba-item win">Mobile optimized</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>Keywords:</strong> washing line, clothes line · Mobile-first · 0.36% conv. rate
+          </div>
+        </div>
+      </div>
+
+      <!-- Computer Parts — long-run -->
+      <div class="case-card google-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Computer Parts & Laptops</div>
+              <div class="case-meta">eCommerce · 8-Year Account · Jun 2013 – Sep 2021</div>
+            </div>
+            <span class="case-platform-badge badge-google">Google Ads</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">Account Scale</div>
+              <div class="ba-item before-item">112M+ impressions</div>
+              <div class="ba-item before-item">1M+ clicks</div>
+              <div class="ba-item before-item">Avg CPC: $22.31</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">Results</div>
+              <div class="ba-item win">26,700 conversions</div>
+              <div class="ba-item win">$2.67M–$4M revenue</div>
+              <div class="ba-item win">Phone calls #1 channel</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>8-year management.</strong> Diverse ad formats · High-volume search · Sustained conversion performance
+          </div>
+        </div>
+      </div>
+
+      <!-- Engine Manufacturing — largest account -->
+      <div class="case-card google-card">
+        <div class="case-header">
+          <div class="case-header-top">
+            <div>
+              <div class="case-title">Engine Manufacturing</div>
+              <div class="case-meta">B2B Scale · $300K/mo · Nov 2023 – Jul 2024</div>
+            </div>
+            <span class="case-platform-badge badge-google">Google Ads</span>
+          </div>
+        </div>
+        <div class="case-body">
+          <div class="roas-highlight">
+            <div class="roas-num">115×</div>
+            <div class="roas-detail">
+              <strong>ROAS · $551.9M total sales</strong><br>
+              CPA dropped $23 → $14 while conversions grew 50%.
+            </div>
+          </div>
+          <div class="ba-split">
+            <div class="ba-col before-col">
+              <div class="ba-label">Before</div>
+              <div class="ba-item before-item">CPA: $23</div>
+              <div class="ba-item before-item">Monthly spend: $300K</div>
+              <div class="ba-item before-item">Low conv. rates</div>
+            </div>
+            <div class="ba-col after-col">
+              <div class="ba-label">After</div>
+              <div class="ba-item win">CPA: $14 (−39%)</div>
+              <div class="ba-item win">Conversions +50%</div>
+              <div class="ba-item win">Spend optimized: $150K</div>
+            </div>
+          </div>
+          <div class="case-impact">
+            <strong>$551.9M sales · $138M net profit.</strong> Largest account managed. Full Search + Shopping architecture.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROAS SUMMARY TABLE ═══ -->
+<div class="full-divider"></div>
+<section class="section">
+  <p class="section-label reveal">Performance Summary</p>
+  <h2 class="section-title reveal">ROAS Across<br>All eCommerce Accounts.</h2>
+  <div class="summary-block reveal">
+    <table class="roas-table">
+      <tr>
+        <td>Shopify eCommerce — US Market <span style="font-size:0.7rem;color:var(--gold);margin-left:0.5rem">[NDA · Active]</span></td>
+        <td>Google + Amazon + TikTok</td>
+        <td>20× ROAS peak (Google) · NDA</td>
+      </tr>
+      <tr>
+        <td>Ebike & Sporting Goods — AU/NZ Shopify</td>
+        <td>Google Search + PMax</td>
+        <td>70× ROAS peak</td>
+      </tr>
+      <tr>
+        <td>Engine Manufacturing — B2B</td>
+        <td>Google Search + Shopping</td>
+        <td>115× ROAS · $551.9M sales</td>
+      </tr>
+      <tr>
+        <td>Security Equipment Retailer</td>
+        <td>Google Shopping</td>
+        <td>21.55× peak · 9.06× aggregate</td>
+      </tr>
+      <tr>
+        <td>Furniture Brand</td>
+        <td>Google Ads</td>
+        <td>2.6× MoM ROAS</td>
+      </tr>
+      <tr>
+        <td>Travel Ads by Expedia (50+ Hotels)</td>
+        <td>Google Ads</td>
+        <td>3.2×–5× ROAS</td>
+      </tr>
+      <tr>
+        <td>Clothesline Company — AU</td>
+        <td>Google Shopping</td>
+        <td>4,400 conversions · $1.20 CPC</td>
+      </tr>
+      <tr>
+        <td>Computer Parts — Long-Run Account</td>
+        <td>Google Ads (8 yrs)</td>
+        <td>26,700 conv. · $4M revenue</td>
+      </tr>
+    </table>
+    <div style="margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;color:var(--muted)">
+      Average ROAS across reported eCommerce accounts: ≈ 38× · NDA account excluded from average · All figures are account-specific and not guarantees of future performance.
+    </div>
+  </div>
+
+<!-- ═══ CTA ═══ -->
+  <div class="cta-block reveal">
+    <div class="cta-title">Ready to Scale<br>Your Shopify Store?</div>
+    <p class="cta-sub">
+      Whether you're on Shopify, WooCommerce, or a custom storefront — if <strong>Google Ads, Amazon Ads, or TikTok Ads</strong> are your growth lever, let's talk. No agency bloat, no account manager roulette. Direct operator access from day one.
+    </p>
+    <div class="cta-btns">
+      <a href="https://book.zeldigital.com" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call ↗</a>
+      <a href="https://zeldigital.com/paid-account-audit" target="_blank" rel="noopener" class="btn btn-ghost">Start with an Audit →</a>
+    </div>
+  </div>
+
+<!-- ═══ DISCLAIMER ═══ -->
+  <div class="disclaimer reveal">
+    <strong>Important Notes & Disclaimers</strong><br><br>
+    All case studies are anonymized for public portfolio use. No proprietary, personally identifiable, or sensitive information is disclosed. Active NDA accounts (April 2026–present) are identified as such — client names, account IDs, and detailed revenue figures are withheld per agreement. The 20× ROAS figure for the active US Shopify account is a directional disclosure cleared for public mention only. All performance figures (ROAS, CPA, revenue, conversions) are specific to individual accounts, timeframes, and market conditions — they are not guarantees of future performance and may not be typical. Results vary by industry, budget, seasonality, offer, landing pages, and broader market conditions. All data sourced from internal Google Ads, Amazon Ads, TikTok Ads, and analytics reports available at time of management.
+  </div>
+</section>
+
+<footer>
+  <p>
+    <a href="https://zeldigital.com">zeldigital.com</a> &nbsp;·&nbsp;
+    <a href="https://hanslacida.com">hanslacida.com</a> &nbsp;·&nbsp;
+    Shopify & eCommerce Results · Updated 2026
+  </p>
+  <p style="margin-top:0.6rem;font-size:0.52rem">
+    © 2026 Hans Lacida · ZELDIGITAL® Marketing Services OPC × KaizenStrategys Solutions LLC · All data anonymized · Safe for public portfolio use
+  </p>
+</footer>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.timeline({ delay: 0.25 })
+    .to('.eyebrow', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' })
+    .to('.hero-title', { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, '-=0.4')
+    .to('.hero-sub', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.5')
+    .to('.hero-platforms', { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4');
+
+  gsap.utils.toArray('.reveal').forEach(el => {
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.75, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none none' }
+    });
+  });
+</script>
+</body>
+</html>
