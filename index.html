@@ -159,7 +159,26 @@
       transition: background 0.2s, color 0.2s !important;
     }
     .nav-cta:hover { background: var(--accent) !important; color: var(--bg) !important; }
-
+    .nav-dropdown { position: relative; }
+.nav-dropdown-menu {
+  position: absolute; top: calc(100% + 12px); left: 0;
+  background: var(--bg-2); border: 1px solid var(--border-light);
+  min-width: 180px; padding: 6px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 901;
+}
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block; padding: 10px 14px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text-secondary); text-decoration: none;
+  transition: color 0.2s, background 0.2s;
+}
+.nav-dropdown-menu a:hover { color: var(--text-primary); background: var(--bg-3); }
     /* ─── HAMBURGER ─── */
     .nav-hamburger {
       display: none; flex-direction: column; justify-content: center;
@@ -596,7 +615,13 @@
 <nav>
   <a href="/" class="nav-logo">Hans<span>.</span>Lacida</a>
   <ul class="nav-links">
-    <li><a href="/results/">Results</a></li>
+    <li class="nav-dropdown">
+      <a href="/results/">Results</a>
+      <div class="nav-dropdown-menu">
+        <a href="/results/videos">Watch Videos</a>
+        <a href="/results/">See More</a>
+      </div>
+    </li>
     <li><a href="/playbook/">Playbook</a></li>
     <li><a href="/insights/">Insights</a></li>
     <li><a href="/faq/">FAQ</a></li>
