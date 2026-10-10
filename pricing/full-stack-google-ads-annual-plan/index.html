@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Annual Growth Engagement — Zeldigital</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0D0E11;
+    --ink-mid: #3A3D47;
+    --ink-light: #7A7F8E;
+    --rule: #E2E4EA;
+    --bg: #F8F9FC;
+    --surface: #FFFFFF;
+    --accent: #1B4DFF;
+    --accent-pale: #EBF0FF;
+    --gold: #C9961A;
+    --gold-pale: #FDF6E3;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  *, *::before, *::after { box-sizing: inherit; }
+
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .wordmark {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .wordmark span {
+    color: var(--accent);
+  }
+
+  nav a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-light);
+    text-decoration: none;
+    margin-left: 28px;
+    letter-spacing: 0.01em;
+  }
+
+  nav a:hover { color: var(--ink); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 80px 40px 56px;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 24px;
+    color: var(--ink);
+    max-width: 700px;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 17px;
+    color: var(--ink-mid);
+    max-width: 520px;
+    line-height: 1.7;
+    margin: 0 0 40px;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 4px;
+    letter-spacing: 0.01em;
+  }
+
+  .hero-cta:hover { background: #1340D6; }
+
+  /* ── FORMULA ── */
+  .formula-bar {
+    background: var(--ink);
+    color: #fff;
+    padding: 28px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    line-height: 1.5;
+  }
+
+  .formula-bar strong {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: italic;
+    color: #C9D3FF;
+  }
+
+  .formula-bar .op { color: var(--ink-light); }
+
+  /* ── SECTION ── */
+  section {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 64px 40px;
+  }
+
+  section + section {
+    padding-top: 0;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin: 0 0 32px;
+    color: var(--ink);
+  }
+
+  /* ── PRICING TABLE ── */
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .pricing-table thead tr {
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .pricing-table th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    padding: 0 16px 14px 0;
+  }
+
+  .pricing-table th:last-child,
+  .pricing-table td:last-child {
+    text-align: right;
+    padding-right: 0;
+  }
+
+  .pricing-table tbody tr {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .pricing-table td {
+    padding: 18px 16px 18px 0;
+    color: var(--ink-mid);
+    vertical-align: top;
+  }
+
+  .pricing-table td:first-child {
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .pricing-table .annual-price {
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .pricing-table .save-badge {
+    display: inline-block;
+    background: var(--gold-pale);
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    white-space: nowrap;
+  }
+
+  .pricing-table td.monthly-total {
+    color: var(--ink-light);
+    font-size: 13px;
+  }
+
+  /* ── RECOMMENDED ── */
+  .recommended-block {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+    padding: 32px;
+    margin-bottom: 32px;
+  }
+
+  .recommended-block h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .recommended-block .price-line {
+    font-size: 36px;
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    color: var(--accent);
+    margin: 16px 0 4px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+
+  .recommended-block .price-detail {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 24px;
+  }
+
+  .or-divider {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 0 8px;
+  }
+
+  .alt-price {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .proposal-box {
+    background: var(--accent-pale);
+    border-radius: 4px;
+    padding: 20px 24px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    font-style: italic;
+  }
+
+  .proposal-box strong {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ── INCLUDES / EXCLUDES ── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .include-block, .exclude-block {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px;
+  }
+
+  .include-block h3, .exclude-block h3 {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  .include-block h3 { color: #2D7A4F; }
+  .exclude-block h3 { color: #B03A2E; }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .check-list li {
+    font-size: 14px;
+    color: var(--ink-mid);
+    padding: 7px 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .check-list li:last-child { border-bottom: none; }
+
+  .check-list li::before {
+    content: '✓';
+    font-size: 12px;
+    font-weight: 700;
+    color: #2D7A4F;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .exclude-block .check-list li::before {
+    content: '×';
+    color: #B03A2E;
+  }
+
+  /* ── POSITIONING ── */
+  .position-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  @media (max-width: 640px) {
+    .position-trio { grid-template-columns: 1fr 1fr; }
+  }
+
+  .position-card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 24px;
+  }
+
+  .position-card .num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-style: italic;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+
+  .position-card p {
+    font-size: 14px;
+    color: var(--ink-mid);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    background: var(--surface);
+    padding: 32px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer p {
+    font-size: 13px;
+    color: var(--ink-light);
+    margin: 0;
+  }
+
+  footer a {
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    header { padding: 16px 20px; }
+    nav { display: none; }
+    .hero, section { padding-left: 20px; padding-right: 20px; }
+    .hero { padding-top: 48px; }
+    .formula-bar { padding: 20px; font-size: 13px; }
+    .two-col, .position-trio { grid-template-columns: 1fr; }
+    .pricing-table { font-size: 13px; }
+    .pricing-table th { font-size: 10px; }
+    footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="wordmark" href="#">Zeldigital<span>.</span></a>
+  <nav>
+    <a href="#packages">Packages</a>
+    <a href="#includes">Scope</a>
+    <a href="#start">Get Started</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-label">Google Ads · 2026 Pricing</div>
+  <h1>Your 12-month paid‑acquisition <em>infrastructure</em>.</h1>
+  <p class="hero-sub">Not a retainer. Not a project. A structured engagement built to compound—tracking, architecture, optimization, and quarterly planning in one commitment.</p>
+  <a href="#start" class="hero-cta">Request a proposal</a>
+</div>
+
+<div class="formula-bar">
+  <strong>Annual Fee</strong>
+  <span class="op">=</span>
+  One-time setup
+  <span class="op">+</span>
+  (12 × monthly management)
+  <span class="op">—</span>
+  Discounted only when paid upfront
+</div>
+
+<section id="packages">
+  <h2>Packages by ad spend</h2>
+  <div style="overflow-x:auto;">
+    <table class="pricing-table">
+      <thead>
+        <tr>
+          <th>Monthly ad spend</th>
+          <th>Management fee</th>
+          <th>One-time setup</th>
+          <th class="monthly-total">Monthly billing total</th>
+          <th>Annual prepay</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>$3k – $5k</td>
+          <td>$1,500 / mo</td>
+          <td>$2,500</td>
+          <td class="monthly-total">$20,500</td>
+          <td><span class="annual-price">$18,500</span><span class="save-badge">Save $2k</span></td>
+        </tr>
+        <tr>
+          <td>$5k – $15k</td>
+          <td>$2,500 / mo</td>
+          <td>$3,500</td>
+          <td class="monthly-total">$33,500</td>
+          <td><span class="annual-price">$30,000</span><span class="save-badge">Save $3.5k</span></td>
+        </tr>
+        <tr>
+          <td>$15k – $30k</td>
+          <td>$4,000 / mo</td>
+          <td>$5,000</td>
+          <td class="monthly-total">$53,000</td>
+          <td><span class="annual-price">$47,500</span><span class="save-badge">Save $5.5k</span></td>
+        </tr>
+        <tr>
+          <td>$30k – $60k</td>
+          <td>$6,000 / mo</td>
+          <td>$7,500</td>
+          <td class="monthly-total">$79,500</td>
+          <td><span class="annual-price">$71,500</span><span class="save-badge">Save $8k</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:13px; color:var(--ink-light); margin-top:16px;">Monthly billing = setup fee amortized across month 1 + ongoing management. Prepay removes the setup fee from the equation. Media budget is always separate.</p>
+</section>
+
+<section id="start">
+  <div class="recommended-block">
+    <h3>Recommended starting point</h3>
+    <p style="font-size:14px; color:var(--ink-light); margin:0 0 4px;">Best fit for clients spending $5k–$15k/month who want a defined, professional engagement from day one.</p>
+    <div class="price-line">$2,500 / mo</div>
+    <div class="price-detail">+ $3,500 one-time setup · minimum 6-month commitment</div>
+
+    <div class="alt-price">
+      <span class="or-divider">or</span>
+      $30,000 paid annually
+      <span class="save-badge">Save $3,500</span>
+    </div>
+
+    <div class="proposal-box">
+      <strong>Proposal language you can use directly:</strong>
+      "12-Month Paid Acquisition Growth Engagement — $30,000. Includes strategy, conversion tracking setup, campaign architecture, monthly optimization, reporting, and quarterly planning. Media budget is separate. Billed as $2,500/month, or $27,500 if paid annually."
+    </div>
+  </div>
+</section>
+
+<section id="includes">
+  <h2>What's in—and out</h2>
+  <div class="two-col">
+    <div class="include-block">
+      <h3>Included</h3>
+      <ul class="check-list">
+        <li>Full account audit and rebuild plan</li>
+        <li>Conversion tracking, GA4 and GTM setup</li>
+        <li>Attribution configuration</li>
+        <li>Search, Shopping/PMax, YouTube, or lead-gen campaign build</li>
+        <li>Monthly optimization and reporting</li>
+        <li>Quarterly strategy call</li>
+        <li>Landing-page and offer recommendations</li>
+        <li>Defined campaign count, asset sets, and revision rounds</li>
+      </ul>
+    </div>
+    <div class="exclude-block">
+      <h3>Excluded</h3>
+      <ul class="check-list">
+        <li>Web development or CRO implementation</li>
+        <li>Unlimited creative production</li>
+        <li>Media budget</li>
+        <li>Third-party software subscriptions</li>
+        <li>Major platform migrations</li>
+        <li>Email, SEO, or social management</li>
+        <li>Work outside agreed campaign scope</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Why senior-level pricing holds</h2>
+  <div class="position-trio" style="grid-template-columns: repeat(2, 1fr);">
+    <div class="position-card">
+      <div class="num">10+</div>
+      <p>Years running paid acquisition systems across e-commerce, healthcare, B2B, and home services.</p>
+    </div>
+    <div class="position-card">
+      <div class="num" style="font-size:24px; padding-top:6px; line-height:1.2;">Ex-Google<br>Ads Partner</div>
+      <p>Former Google Account Strategist and certified Google Ads Partner — built from the inside out.</p>
+    </div>
+    <div class="position-card">
+      <div class="num">50%+</div>
+      <p>Average CPA reduction across managed accounts — without cutting conversion volume.</p>
+    </div>
+    <div class="position-card">
+      <div style="display:flex; gap:28px; align-items:flex-start;">
+        <div>
+          <div class="num">20×</div>
+          <p style="margin:0; font-size:13px; color:var(--ink-light);">Peak ROAS · US</p>
+        </div>
+        <div style="width:1px; background:var(--rule); align-self:stretch; margin-top:4px;"></div>
+        <div>
+          <div class="num">70×</div>
+          <p style="margin:0; font-size:13px; color:var(--ink-light);">Peak ROAS · AU/NZ</p>
+        </div>
+      </div>
+      <p style="margin:12px 0 0; font-size:14px; color:var(--ink-mid); line-height:1.6;">Peak return on ad spend in e-commerce — two markets, same systematic approach.</p>
+    </div>
+  </div>
+  <p style="font-size:14px; color:var(--ink-light); margin-top:28px; max-width:600px;">Senior specialist rates in 2026 sit between 10–20% of monthly ad spend, with flat retainers commonly $2,500–$7,500/month and setup fees $2,500–$10,000. These packages land well within that range while reflecting 10+ years of paid-acquisition system building—not account maintenance.</p>
+</section>
+
+<footer>
+  <p>© 2026 Zeldigital · Hans Lacida · zeldigital.com</p>
+  <a href="mailto:hans@zeldigital.com">Contact to start →</a>
+</footer>
+
+</body>
+</html>
